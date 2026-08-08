@@ -98,6 +98,7 @@
   .tile .thumb{aspect-ratio:1/1;background:var(--paper-2);border:1px solid var(--line-soft);border-radius:2px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
   .tile .thumb .ph{color:rgba(251,250,246,0.85);font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;position:relative;z-index:1;}
   .tile .thumb .tone{position:absolute;inset:0;}
+  .tile .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .tile.t1 .tone{background:var(--celadon-deep);}
   .tile.t2 .tone{background:var(--celadon-mid);}
   .tile.t3 .tone{background:var(--celadon);}
@@ -225,7 +226,10 @@
           <p class="tagline">나는 매일 여행한다, 바로 서울에서.</p>
         </div>
       </a>
-      <div class="tile t2"><div class="thumb"><div class="tone"></div><span class="ph">Image</span></div><div class="cap"><span class="date">Coming soon</span><h4>The alley I've passed a thousand times.</h4></div></div>
+      <a class="tile t2" href="/jeongdong">
+        <div class="thumb"><img src="/photos/jeongdong-05-jungmyeongjeon.jpg" alt="Jungmyeongjeon, Jeongdong" loading="lazy"></div>
+        <div class="cap"><span class="date">Aug 2026 · Jeongdong</span><h4>While my daughter learns English, I walk a hundred years.</h4></div>
+      </a>
       <div class="tile t3"><div class="thumb"><div class="tone"></div><span class="ph">Image</span></div><div class="cap"><span class="date">Coming soon</span><h4>My mother's recipe, written down at last.</h4></div></div>
       <div class="tile t4"><div class="thumb"><div class="tone"></div><span class="ph">Image</span></div><div class="cap"><span class="date">Coming soon</span><h4>A Tuesday that felt like a postcard.</h4></div></div>
       <div class="tile t5"><div class="thumb"><div class="tone"></div><span class="ph">Image</span></div><div class="cap"><span class="date">Coming soon</span><h4>What my daughter sees that I forgot.</h4></div></div>
