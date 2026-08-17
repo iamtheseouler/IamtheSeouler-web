@@ -18,6 +18,42 @@ media_folder: photos
 public_folder: /photos
 
 collections:
+  - name: gallery
+    label: 갤러리
+    files:
+      - name: photos
+        label: 갤러리 사진
+        file: src/_data/gallery.json
+        format: json
+        description: 위에 있는 사진이 갤러리 앞쪽에 놓입니다. 끌어서 순서를 바꿀 수 있습니다.
+        fields:
+          - name: photos
+            label: 사진
+            label_singular: 사진
+            widget: list
+            summary: '{{fields.alt}}'
+            fields:
+              - name: image
+                label: 사진
+                widget: image
+              - name: alt
+                label: 사진 설명
+                widget: string
+                hint: '화면 낭독기와 검색이 읽는 설명입니다. 보이지는 않습니다.'
+              - name: meta
+                label: 언제·어디서
+                widget: string
+                required: false
+                hint: '예: 2026년 8월 · 정동'
+              - name: caption_en
+                label: 한 줄 (영문)
+                widget: text
+                required: false
+              - name: caption_ko
+                label: 한 줄 (한글)
+                widget: text
+                required: false
+
   - name: posts
     label: 글
     label_singular: 글

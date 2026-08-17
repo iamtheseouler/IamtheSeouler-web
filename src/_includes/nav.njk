@@ -1,0 +1,21 @@
+{# The home page nav sits on the celadon field and needs light text;
+   everywhere else it sits on paper. Pass onCeladon from the home page. #}
+<nav>
+  {%- if onCeladon %}
+  <div class="mark" style="color:var(--on-celadon);">I am the <b style="color:#fff;">Seouler</b></div>
+  <div class="links" style="color:rgba(251,250,246,0.75);">
+    <a href="#about">About</a>
+    <a href="#journal">Journal</a>
+    <a href="/gallery">Gallery</a>
+    <a href="#subscribe">Subscribe</a>
+  </div>
+  {%- else %}
+  <a href="/" class="mark">I am the <b>Seouler</b></a>
+  <div class="links">
+    <a href="/#about">About</a>
+    <a href="/#journal">Journal</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/#subscribe">Subscribe</a>
+  </div>
+  {%- endif %}
+</nav>

@@ -13,14 +13,7 @@ bodyClass: home
 <div class="poster">
   <div class="celadon-field">
     <div class="wrap">
-      <nav>
-        <div class="mark" style="color:var(--on-celadon);">I am the <b style="color:#fff;">Seouler</b></div>
-        <div class="links" style="color:rgba(251,250,246,0.75);">
-          <a href="#about">About</a>
-          <a href="#journal">Journal</a>
-          <a href="#subscribe">Subscribe</a>
-        </div>
-      </nav>
+      {% set onCeladon = true %}{% include "nav.njk" %}
       <div class="eyebrow">A Letter from Seoul</div>
       <div class="relic-top"><div class="script">I am the<br>Seouler</div></div>
     </div>

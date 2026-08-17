@@ -1,0 +1,119 @@
+---
+layout: base.njk
+permalink: /gallery.html
+seoTitle: The Gallery | I am the Seouler
+description: Photographs from an everyday voyager in Seoul, and from the road that led back to it.
+---
+<div class="wrap">
+  {% include "nav.njk" %}
+</div>
+
+<header class="story-head">
+  <div class="wrap">
+    <div class="story-meta">The Gallery</div>
+    <h1>Seoul, one frame at a time.</h1>
+    <p class="story-sub-kr">서울, 한 장면씩.</p>
+  </div>
+</header>
+
+<main class="gallery-page">
+  <div class="wrap">
+    {%- if gallery.photos and gallery.photos.length %}
+    <div class="photo-wall">
+      {%- for p in gallery.photos %}
+      <figure class="plate" data-index="{{ loop.index0 }}" tabindex="0" role="button"
+              aria-label="{{ p.alt }} — 크게 보기">
+        <img src="{{ p.image }}" alt="{{ p.alt }}" loading="lazy">
+        {%- if p.meta or p.caption_en or p.caption_ko %}
+        <figcaption>
+          {%- if p.meta %}<span class="plate-meta">{{ p.meta }}</span>{% endif %}
+          {%- if p.caption_en %}<span class="plate-cap">{{ p.caption_en }}</span>{% endif %}
+          {%- if p.caption_ko %}<span class="plate-cap-kr">{{ p.caption_ko }}</span>{% endif %}
+        </figcaption>
+        {%- endif %}
+      </figure>
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p class="gallery-empty">아직 올린 사진이 없습니다.</p>
+    {%- endif %}
+  </div>
+</main>
+
+<div class="story-close">
+  <div class="wrap">
+    <a class="back" href="/#journal">← Back to the Journal</a>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+  <button class="lb-close" type="button" aria-label="닫기">✕</button>
+  <button class="lb-prev" type="button" aria-label="이전 사진">‹</button>
+  <button class="lb-next" type="button" aria-label="다음 사진">›</button>
+  <figure class="lb-frame">
+    <img id="lb-img" src="" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+</div>
+
+<script type="application/json" id="gallery-data">{{ gallery.photos | dump | safe }}</script>
+<script>
+  (function () {
+    var dataEl = document.getElementById('gallery-data');
+    var photos = dataEl ? JSON.parse(dataEl.textContent) : [];
+    if (!photos.length) return;
+
+    var box = document.getElementById('lightbox');
+    var img = document.getElementById('lb-img');
+    var cap = document.getElementById('lb-cap');
+    var current = 0;
+    var lastFocused = null;
+
+    function show(i) {
+      current = (i + photos.length) % photos.length;
+      var p = photos[current];
+      img.src = p.image;
+      img.alt = p.alt || '';
+      var parts = '';
+      if (p.meta) parts += '<span class="lb-meta">' + p.meta + '</span>';
+      if (p.caption_en) parts += '<span class="lb-cap-en">' + p.caption_en + '</span>';
+      if (p.caption_ko) parts += '<span class="lb-cap-kr">' + p.caption_ko + '</span>';
+      cap.innerHTML = parts;
+      cap.hidden = !parts;
+    }
+
+    function open(i) {
+      lastFocused = document.activeElement;
+      show(i);
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+      box.querySelector('.lb-close').focus();
+    }
+
+    function close() {
+      box.hidden = true;
+      img.src = '';
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
+    }
+
+    document.querySelectorAll('.plate').forEach(function (plate) {
+      plate.addEventListener('click', function () { open(+plate.dataset.index); });
+      plate.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(+plate.dataset.index); }
+      });
+    });
+
+    box.querySelector('.lb-close').addEventListener('click', close);
+    box.querySelector('.lb-prev').addEventListener('click', function () { show(current - 1); });
+    box.querySelector('.lb-next').addEventListener('click', function () { show(current + 1); });
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  })();
+</script>
