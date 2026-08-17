@@ -15,6 +15,14 @@
 - 소제목은 `### 1. 제목` 처럼 번호를 붙입니다. 번호가 회색 이탤릭으로 표시됩니다.
 - 사진은 영문·한글 본문에 같은 순서, 같은 파일로 넣습니다.
 
+## 갤러리
+
+`/gallery`. `/admin` → 갤러리 → 갤러리 사진 에서 올리고, 끌어서 순서를 바꿉니다.
+위에 있는 사진이 앞쪽에 놓입니다. 글과는 따로 도는 자리라, 에세이를 쓰지 않는
+주에도 올릴 것이 생깁니다.
+
+사진 설명은 눈에 보이지 않지만 꼭 채우세요. 화면 낭독기와 검색이 그것만 읽습니다.
+
 ## 폴더
 
 ```
@@ -24,6 +32,9 @@ src/_includes/        페이지 틀 (base = 공통, post = 글 페이지)
 src/index.njk         홈. Journal 카드는 글에서 자동 생성됩니다
 src/_data/site.json   이메일, 애널리틱스 토큰, 반복 문구
 src/_data/upcoming.json  Journal 의 "Coming soon" 자리표시자
+src/_data/gallery.json   갤러리 사진 목록
+src/gallery.njk       갤러리 페이지
+src/_includes/nav.njk 상단 메뉴 (모든 페이지가 이 파일 하나를 씁니다)
 src/css/site.css      사이트 전체 스타일 한 벌
 src/admin/            /admin 화면 (Sveltia CMS)
 api/                  /admin 로그인용 GitHub OAuth 함수 2개
