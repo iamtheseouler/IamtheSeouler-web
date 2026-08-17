@@ -33,7 +33,7 @@ description: Every photograph from the journal, in one place — and a way back 
       {%- for p in photos %}
       <figure class="plate" data-index="{{ loop.index0 }}" data-label="{{ p.label }}"
               tabindex="0" role="button" aria-label="{{ p.alt }} — 크게 보기">
-        <img src="{{ p.image }}" alt="{{ p.alt }}"{{ p.image | size | safe }} loading="lazy">
+        <img src="{{ p.image }}" alt="{{ p.alt }}" sizes="(max-width: 640px) 88vw, (max-width: 780px) 44vw, 320px" loading="lazy">
       </figure>
       {%- endfor %}
     </div>
@@ -55,7 +55,7 @@ description: Every photograph from the journal, in one place — and a way back 
   <button class="lb-prev" type="button" aria-label="이전 사진">‹</button>
   <button class="lb-next" type="button" aria-label="다음 사진">›</button>
   <figure class="lb-frame">
-    <img id="lb-img" src="" alt="">
+    <img id="lb-img" alt="">
     <figcaption id="lb-cap"></figcaption>
   </figure>
 </div>
@@ -112,7 +112,7 @@ description: Every photograph from the journal, in one place — and a way back 
 
     function close() {
       box.hidden = true;
-      img.src = '';
+      img.removeAttribute('src');
       document.body.style.overflow = '';
       if (lastFocused) lastFocused.focus();
     }

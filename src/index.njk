@@ -27,7 +27,7 @@ bodyClass: home
 
   <div class="paper-field">
     <div class="wrap">
-      <div class="relic-bottom"><img src="/photos/relic-bottom.jpg" alt="Seouler"></div>
+      <div class="relic-bottom"><img src="/photos/relic-bottom.jpg" alt="Seouler" sizes="230px"></div>
     </div>
   </div>
 </div>
@@ -72,7 +72,7 @@ bodyClass: home
     <div class="grid">
       {%- if featured %}{% set c = featured.data.card %}
       <a class="tile feature {{ c.tone }}" href="{{ featured.url | clean }}">
-        <div class="thumb"><img src="{{ c.cover }}" alt="{{ c.cover_alt }}" loading="lazy"></div>
+        <div class="thumb"><img src="{{ c.cover }}" alt="{{ c.cover_alt }}" sizes="(max-width: 780px) 92vw, 560px" loading="lazy"></div>
         <div class="cap">
           <span class="date">{{ featured.data.meta_en }}</span>
           <h4>{{ c.title }}</h4>
@@ -83,7 +83,7 @@ bodyClass: home
       {%- endif %}
       {%- for p in rest %}{% set c = p.data.card %}
       <a class="tile {{ c.tone }}" href="{{ p.url | clean }}">
-        <div class="thumb"><img src="{{ c.cover }}" alt="{{ c.cover_alt }}" loading="lazy"></div>
+        <div class="thumb"><img src="{{ c.cover }}" alt="{{ c.cover_alt }}" sizes="(max-width: 780px) 44vw, 345px" loading="lazy"></div>
         <div class="cap"><span class="date">{{ p.data.meta_en }}</span><h4>{{ c.title }}</h4></div>
       </a>
       {%- endfor %}

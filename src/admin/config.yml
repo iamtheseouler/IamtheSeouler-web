@@ -14,7 +14,7 @@ backend:
 # 저장 버튼을 누르면 바로 main 에 커밋되고 Vercel 이 다시 배포합니다.
 publish_mode: simple
 
-media_folder: photos
+media_folder: src/photos
 public_folder: /photos
 
 collections:
