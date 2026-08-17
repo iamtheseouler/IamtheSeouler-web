@@ -1,0 +1,94 @@
+---
+layout: base.njk
+---
+<div class="wrap">
+  <nav>
+    <a href="/" class="mark">I am the <b>Seouler</b></a>
+    <div class="links">
+      <a href="/#about">About</a>
+      <a href="/#journal">Journal</a>
+      <a href="/#subscribe">Subscribe</a>
+    </div>
+  </nav>
+  <div class="lang-toggle">
+    <button data-lang="en" class="active">EN</button>
+    <button data-lang="ko">한글</button>
+  </div>
+</div>
+
+<div id="panel-en" class="lang-panel">
+
+<header class="story-head">
+  <div class="wrap">
+    <div class="story-meta">{{ meta_en }}</div>
+    <h1>{{ title_en }}</h1>
+    <p class="story-sub">{{ site.storySub }}</p>
+    <p class="story-sub-kr">{{ sub_kr }}</p>
+  </div>
+</header>
+
+<main class="story-body">
+  <div class="wrap">
+    <div class="story-inner">
+
+      <p class="lede">{{ lede_en }}</p>
+
+{{ body_en | storyBody("en") | safe }}
+
+    </div>
+  </div>
+</main>
+
+</div>
+
+<div id="panel-ko" class="lang-panel" hidden>
+
+<header class="story-head">
+  <div class="wrap">
+    <div class="story-meta">{{ meta_ko }}</div>
+    <h1 class="kr">{{ title_ko }}</h1>
+    <p class="story-sub">{{ site.storySub }}</p>
+  </div>
+</header>
+
+<main class="story-body">
+  <div class="wrap">
+    <div class="story-inner kr">
+
+      <p class="lede kr">{{ lede_ko }}</p>
+
+{{ body_ko | storyBody("ko") | safe }}
+
+    </div>
+  </div>
+</main>
+
+</div>
+
+<div class="story-close">
+  <div class="wrap">
+    <p class="line1">{{ site.closeLine1 }}</p>
+    <p class="line2">{{ site.closeLine2 }}</p>
+    <a class="back" href="/#journal">← Back to the Journal</a>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('.lang-toggle button');
+    var panelEn = document.getElementById('panel-en');
+    var panelKo = document.getElementById('panel-ko');
+    function setLang(lang){
+      panelEn.hidden = lang !== 'en';
+      panelKo.hidden = lang !== 'ko';
+      buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+      try{ localStorage.setItem('seouler-story-lang', lang); }catch(e){}
+    }
+    buttons.forEach(function(b){
+      b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+    });
+    var saved;
+    try{ saved = localStorage.getItem('seouler-story-lang'); }catch(e){}
+    setLang(saved === 'ko' ? 'ko' : 'en');
+  })();
+</script>

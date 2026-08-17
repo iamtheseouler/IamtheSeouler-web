@@ -1,0 +1,118 @@
+---
+layout: base.njk
+seoTitle: I am the Seouler
+bodyClass: home
+---
+{# Feature = the post flagged `card.feature`, otherwise the newest one.
+   The grid always holds 6 slots; anything not yet written shows as
+   a "Coming soon" placeholder from src/_data/upcoming.json.          #}
+{% set posts = collections.journal %}
+{% set featured = posts | featured %}
+{% set rest = posts | except(featured) %}
+
+<div class="poster">
+  <div class="celadon-field">
+    <div class="wrap">
+      <nav>
+        <div class="mark" style="color:var(--on-celadon);">I am the <b style="color:#fff;">Seouler</b></div>
+        <div class="links" style="color:rgba(251,250,246,0.75);">
+          <a href="#about">About</a>
+          <a href="#journal">Journal</a>
+          <a href="#subscribe">Subscribe</a>
+        </div>
+      </nav>
+      <div class="eyebrow">A Letter from Seoul</div>
+      <div class="relic-top"><div class="script">I am the<br>Seouler</div></div>
+    </div>
+  </div>
+
+  <div class="title-band">
+    <h1>I am the <em>Seouler</em>.</h1>
+    <div class="kr-hook">나는 서울러입니다.</div>
+    <div class="subtitle">Everyday Voyager</div>
+  </div>
+
+  <div class="paper-field">
+    <div class="wrap">
+      <div class="relic-bottom"><img src="/photos/relic-bottom.jpg" alt="Seouler"></div>
+    </div>
+  </div>
+</div>
+
+<section class="dict">
+  <div class="wrap">
+    <div class="dict-inner">
+      <div class="dict-head">
+        <span class="dict-word">Seouler</span>
+        <span class="dict-phon">/ˈsoʊlər/</span>
+        <span class="dict-pos">noun</span>
+      </div>
+      <p class="dict-def">someone who treats their own city like a destination — turning the everyday into discovery, wherever they happen to be rooted.</p>
+      <p class="dict-kr">자기가 사는 도시를 여행지처럼 대하는 사람. 뿌리내린 곳에서, 매일을 발견으로 바꾸는 사람.</p>
+      <p class="dict-tag">Rooted, but restless — in the best way.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-inner">
+      <div class="label">The Origin</div>
+      <h2>I met my most alive self<br>on a trip.</h2>
+      <p class="h2-kr">여행에서, 나는 가장 살아있는 나를 만났다.</p>
+      <p><span class="lead-first">It was my first time abroad alone</span> — Macau, then Hong Kong. Somewhere in those unfamiliar streets, I found a version of myself I loved: curious, awake, unafraid. Then I came home, and within days she was gone. Back to the same routines, the same quiet dullness.</p>
+      <p>So I asked myself a question. What if the problem wasn't the trip — but the way I was looking at my own life?</p>
+      <p>Seoul is on someone's dream list right now. A place people long to visit but can't. And I <em>live</em> here. So I decided to stop waiting for the next trip, and start treating my own city like the destination it already is.</p>
+      <p class="close">Live where you are, like a Seouler.</p>
+      <p class="close-kr">당신이 있는 그곳을, 서울러처럼 살아보기를.</p>
+      <a class="readmore" href="/story"><span>Read the full story →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="journal">
+  <div class="wrap">
+    <div class="gallery-head">
+      <h3>The Journal</h3>
+      <span class="meta">Latest first</span>
+    </div>
+    <div class="grid">
+      {%- if featured %}{% set c = featured.data.card %}
+      <a class="tile feature {{ c.tone }}" href="{{ featured.url | clean }}">
+        <div class="thumb"><img src="{{ c.cover }}" alt="{{ c.cover_alt }}" loading="lazy"></div>
+        <div class="cap">
+          <span class="date">{{ featured.data.meta_en }}</span>
+          <h4>{{ c.title }}</h4>
+          {%- if c.excerpt %}<p class="excerpt">{{ c.excerpt }}</p>{% endif %}
+          {%- if c.tagline %}<p class="tagline">{{ c.tagline }}</p>{% endif %}
+        </div>
+      </a>
+      {%- endif %}
+      {%- for p in rest %}{% set c = p.data.card %}
+      <a class="tile {{ c.tone }}" href="{{ p.url | clean }}">
+        <div class="thumb"><img src="{{ c.cover }}" alt="{{ c.cover_alt }}" loading="lazy"></div>
+        <div class="cap"><span class="date">{{ p.data.meta_en }}</span><h4>{{ c.title }}</h4></div>
+      </a>
+      {%- endfor %}
+      {%- for u in upcoming %}{% if loop.index0 < (6 - posts.length) %}
+      <div class="tile {{ u.tone }}"><div class="thumb"><div class="tone"></div><span class="ph">Image</span></div><div class="cap"><span class="date">Coming soon</span><h4>{{ u.title }}</h4></div></div>
+      {%- endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="subscribe" id="subscribe">
+  <div class="wrap">
+    <div class="inner">
+      <div class="label">Join the Journal</div>
+      <h2>New notes from Seoul,<br>straight to your inbox.</h2>
+      <p class="h2-kr">서울에서 보내는 편지, 당신의 메일함으로.</p>
+      <p>For anyone who lives here, dreams of it, or just wants to see the everyday differently.</p>
+      <div class="form">
+        <input type="email" placeholder="you@example.com">
+        <button>Subscribe</button>
+      </div>
+      <div class="fine">No spam · Unsubscribe anytime</div>
+    </div>
+  </div>
+</section>

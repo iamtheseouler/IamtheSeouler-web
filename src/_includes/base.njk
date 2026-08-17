@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if seoTitle %}{% set pageTitle = seoTitle %}
+{% elif title_en %}{% set pageTitle = title_en + " | " + site.name %}
+{% else %}{% set pageTitle = site.name %}{% endif %}
+<title>{{ pageTitle }}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@300;400;500&family=JetBrains+Mono:wght@400;500{% if bodyClass == 'home' %}&family=Nothing+You+Could+Do{% endif %}&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "{{ site.analytics.clarityId }}");
+</script>
+</head>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+
+{{ content | safe }}
+
+<footer>
+  <div class="wrap">
+    <div class="mark">{{ site.name }}</div>
+    <div class="info">© {{ site.year }} · {{ site.email }}</div>
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ site.analytics.cloudflareToken }}"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
