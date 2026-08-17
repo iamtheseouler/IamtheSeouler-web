@@ -1,28 +1,5 @@
 const markdownIt = require("markdown-it");
-const { imageSize } = require("image-size");
-const fs = require("fs");
-const path = require("path");
-
-/* Photos are written into the page with their real pixel size so the browser
-   can hold the space open before the file arrives — otherwise the page jumps
-   around as each one loads. Measured once per build and remembered.        */
-const sizeCache = new Map();
-function sizeAttrs(src) {
-  if (!src || !src.startsWith("/")) return "";
-  if (sizeCache.has(src)) return sizeCache.get(src);
-  let attrs = "";
-  try {
-    const { width, height } = imageSize(
-      fs.readFileSync(path.join(__dirname, src.slice(1)))
-    );
-    if (width && height) attrs = ` width="${width}" height="${height}"`;
-  } catch (error) {
-    // A photo that is not on disk yet simply goes out without a size.
-  }
-  sizeCache.set(src, attrs);
-  return attrs;
-}
-
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 /* ------------------------------------------------------------------
    The Seouler — Eleventy config
 
@@ -48,7 +25,7 @@ md.renderer.rules.image = function (tokens, idx) {
   const src = token.attrGet("src") || "";
   const alt = token.content || "";
   const esc = md.utils.escapeHtml;
-  return `<figure class="shot"><img src="${esc(src)}" alt="${esc(alt)}"${sizeAttrs(src)} loading="lazy"></figure>`;
+  return `<figure class="shot"><img src="${esc(src)}" alt="${esc(alt)}" sizes="(max-width: 780px) 92vw, 660px" loading="lazy"></figure>`;
 };
 
 /* Photos written into a post body:  ![alt](/photos/x.jpg "one line")
@@ -86,7 +63,21 @@ md.renderer.rules.paragraph_close = (tokens, idx, opts, env, self) =>
 module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
-  eleventyConfig.addPassthroughCopy({ photos: "photos" });
+  /* The photographs come off a phone at 1200–1600px. The gallery shows them
+     about 316px wide, so sending the originals meant 7.7MB for one page and
+     several seconds of blank screen. Every <img> in the built pages is
+     rewritten here into a set of sizes the browser can choose from.        */
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    extensions: "html",
+    formats: ["avif", "webp", "jpeg"],
+    widths: [400, 800, 1400, "auto"],
+    defaultAttributes: { loading: "lazy", decoding: "async" },
+    sharpJpegOptions: { quality: 82, mozjpeg: true },
+    urlPath: "/img/",
+    outputDir: "./_site/img/"
+  });
+
+  eleventyConfig.addPassthroughCopy({ "src/photos": "photos" });
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
 
   // /admin is the CMS. It is copied through untouched — Eleventy must not try
@@ -125,8 +116,6 @@ module.exports = function (eleventyConfig) {
   // Strip the .html so links stay on the clean URLs Vercel already serves.
   eleventyConfig.addFilter("clean", (url) => (url || "").replace(/\.html$/, ""));
 
-  // ` width="…" height="…"` for a photo, or nothing if it cannot be measured.
-  eleventyConfig.addFilter("size", sizeAttrs);
 
   /* Every photo on the site belongs to a post: either it sits in the body, or
      it is one of the extras that did not fit. The gallery is all of them,

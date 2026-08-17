@@ -10,7 +10,7 @@
     {%- for e in extras %}
     {%- if e.image %}
     <figure class="strip-item">
-      <img src="{{ e.image }}" alt="{{ e.alt }}"{{ e.image | size | safe }} loading="lazy">
+      <img src="{{ e.image }}" alt="{{ e.alt }}" sizes="(max-width: 780px) 58vw, 430px" loading="lazy">
       {%- set line = e.caption_ko if lang == 'ko' else e.caption_en %}
       {%- if line %}<figcaption>{{ line }}</figcaption>{% endif %}
     </figure>
