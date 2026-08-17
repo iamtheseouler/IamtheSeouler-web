@@ -90,8 +90,9 @@ description: Every photograph from the journal, in one place — and a way back 
       if (p.caption_en) html += '<span class="lb-cap-en">' + esc(p.caption_en) + '</span>';
       if (p.caption_ko) html += '<span class="lb-cap-kr">' + esc(p.caption_ko) + '</span>';
       if (p.postUrl) {
-        html += '<a class="lb-link" href="' + esc(p.postUrl) + '">' +
-                esc(p.postTitle || '이 사진이 있는 글') + ' 보기 →</a>';
+        var from = p.label ? esc(p.label) + ' · ' : '';
+        html += '<a class="lb-link" href="' + esc(p.postUrl) + '" title="' +
+                esc(p.postTitle || '') + '">' + from + '이 사진이 있는 글 보기 →</a>';
       }
       cap.innerHTML = html;
     }
