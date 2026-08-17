@@ -5,7 +5,7 @@
 backend:
   name: github
   repo: iamtheseouler/IamtheSeouler-web
-  branch: cms-sandbox
+  branch: main
   # The apex domain redirects to www, so www is the address that actually
   # serves /admin and therefore the one GitHub must redirect back to.
   base_url: https://www.iamtheseouler.com
@@ -130,13 +130,17 @@ collections:
         label: 본문 (영문)
         widget: markdown
         modes: [rich_text, raw]
-        buttons: [bold, italic]
+        # heading-three is what the post template styles as a section title.
+        # Without it here the editor shows "### 1. Title" as plain text.
+        buttons: [bold, italic, heading-three]
         editor_components: [image]
         hint: '소제목은 "### 1. Title" 처럼 번호를 붙여 쓰면 번호가 회색으로 표시됩니다.'
       - name: body_ko
         label: 본문 (한글)
         widget: markdown
         modes: [rich_text, raw]
-        buttons: [bold, italic]
+        # heading-three is what the post template styles as a section title.
+        # Without it here the editor shows "### 1. Title" as plain text.
+        buttons: [bold, italic, heading-three]
         editor_components: [image]
         hint: '사진은 영문 본문과 같은 위치에 같은 사진을 넣어주세요.'
