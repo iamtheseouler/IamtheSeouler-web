@@ -23,7 +23,7 @@ description: Photographs from an everyday voyager in Seoul, and from the road th
       {%- for p in gallery.photos %}
       <figure class="plate" data-index="{{ loop.index0 }}" tabindex="0" role="button"
               aria-label="{{ p.alt }} — 크게 보기">
-        <img src="{{ p.image }}" alt="{{ p.alt }}" loading="lazy">
+        <img src="{{ p.image }}" alt="{{ p.alt }}"{{ p.image | size | safe }} loading="lazy">
         {%- if p.meta or p.caption_en or p.caption_ko %}
         <figcaption>
           {%- if p.meta %}<span class="plate-meta">{{ p.meta }}</span>{% endif %}

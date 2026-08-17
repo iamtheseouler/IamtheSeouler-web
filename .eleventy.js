@@ -1,4 +1,27 @@
 const markdownIt = require("markdown-it");
+const { imageSize } = require("image-size");
+const fs = require("fs");
+const path = require("path");
+
+/* Photos are written into the page with their real pixel size so the browser
+   can hold the space open before the file arrives — otherwise the page jumps
+   around as each one loads. Measured once per build and remembered.        */
+const sizeCache = new Map();
+function sizeAttrs(src) {
+  if (!src || !src.startsWith("/")) return "";
+  if (sizeCache.has(src)) return sizeCache.get(src);
+  let attrs = "";
+  try {
+    const { width, height } = imageSize(
+      fs.readFileSync(path.join(__dirname, src.slice(1)))
+    );
+    if (width && height) attrs = ` width="${width}" height="${height}"`;
+  } catch (error) {
+    // A photo that is not on disk yet simply goes out without a size.
+  }
+  sizeCache.set(src, attrs);
+  return attrs;
+}
 
 /* ------------------------------------------------------------------
    The Seouler — Eleventy config
@@ -25,7 +48,7 @@ md.renderer.rules.image = function (tokens, idx) {
   const src = token.attrGet("src") || "";
   const alt = token.content || "";
   const esc = md.utils.escapeHtml;
-  return `<figure class="shot"><img src="${esc(src)}" alt="${esc(alt)}" loading="lazy"></figure>`;
+  return `<figure class="shot"><img src="${esc(src)}" alt="${esc(alt)}"${sizeAttrs(src)} loading="lazy"></figure>`;
 };
 
 // A paragraph that holds nothing but one image should not be wrapped in <p>.
@@ -81,6 +104,9 @@ module.exports = function (eleventyConfig) {
 
   // Strip the .html so links stay on the clean URLs Vercel already serves.
   eleventyConfig.addFilter("clean", (url) => (url || "").replace(/\.html$/, ""));
+
+  // ` width="…" height="…"` for a photo, or nothing if it cannot be measured.
+  eleventyConfig.addFilter("size", sizeAttrs);
 
   return {
     dir: {

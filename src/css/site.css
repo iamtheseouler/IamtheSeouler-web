@@ -150,7 +150,7 @@ nav .links a:hover{color:var(--ink);}
 .story-inner.kr p{font-family:var(--kr);font-weight:300;letter-spacing:0.002em;}
 
 .shot{margin:38px 0 40px;}
-.shot img{width:100%;border-radius:2px;}
+.shot img{width:100%;height:auto;border-radius:2px;}
 
 .story-close{padding:20px 0 100px;text-align:center;}
 .story-close .line1{font-family:var(--display);font-style:italic;font-size:26px;color:var(--celadon-deep);margin:0 0 12px;}
@@ -162,7 +162,7 @@ nav .links a:hover{color:var(--ink);}
 .gallery-page{padding:60px 0 30px;}
 .photo-wall{columns:3;column-gap:22px;}
 .plate{break-inside:avoid;margin:0 0 26px;cursor:zoom-in;outline:none;}
-.plate img{width:100%;border-radius:2px;display:block;transition:opacity .25s;}
+.plate img{width:100%;height:auto;border-radius:2px;display:block;transition:opacity .25s;}
 .plate:hover img,.plate:focus-visible img{opacity:0.86;}
 .plate:focus-visible{outline:2px solid var(--celadon-deep);outline-offset:4px;}
 .plate figcaption{margin-top:11px;display:flex;flex-direction:column;gap:4px;}
