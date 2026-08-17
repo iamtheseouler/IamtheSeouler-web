@@ -1,0 +1,142 @@
+# The Seouler — 글쓰기 화면 설정
+# 이 파일이 /admin 화면의 입력 항목을 결정합니다.
+# 항목을 바꾸면 src/_includes/post.njk 도 같이 봐야 합니다.
+
+backend:
+  name: github
+  repo: iamtheseouler/IamtheSeouler-web
+  branch: main
+  base_url: https://iamtheseouler.com
+  auth_endpoint: api/auth
+
+# 저장 버튼을 누르면 바로 main 에 커밋되고 Vercel 이 다시 배포합니다.
+publish_mode: simple
+
+media_folder: photos
+public_folder: /photos
+
+locale: ko
+
+collections:
+  - name: posts
+    label: 글
+    label_singular: 글
+    description: 저장하면 곧바로 사이트에 반영됩니다.
+    folder: src/posts
+    extension: md
+    format: yaml-frontmatter
+    create: true
+    identifier_field: title_en
+    slug: '{{fields.url_slug}}'
+    summary: '{{title_ko}}'
+    sortable_fields: [date, title_ko]
+    view_groups:
+      - label: 연도
+        field: date
+        pattern: \d{4}
+    fields:
+      - name: url_slug
+        label: 주소
+        widget: string
+        required: false
+        hint: '영문 소문자로. jeongdong 이라고 쓰면 주소가 iamtheseouler.com/jeongdong 이 됩니다. 새 글에만 필요하고, 이미 올린 글은 비워두세요.'
+
+      - name: date
+        label: 발행일
+        widget: datetime
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        picker_utc: true
+        hint: '홈페이지 글 순서를 정합니다.'
+
+      # ---------- 제목 ----------
+      - name: title_en
+        label: 제목 (영문)
+        widget: string
+      - name: title_ko
+        label: 제목 (한글)
+        widget: string
+      - name: sub_kr
+        label: 영문 페이지 아래 붙는 한글 한 줄
+        widget: string
+        required: false
+        hint: '보통 한글 제목에 마침표를 붙인 형태입니다.'
+      - name: meta_en
+        label: 머리 표시 (영문)
+        widget: string
+        hint: '예: Aug 2026 · Jeongdong'
+      - name: meta_ko
+        label: 머리 표시 (한글)
+        widget: string
+        hint: '예: 2026년 8월 · 정동'
+
+      # ---------- 검색 노출 ----------
+      - name: seoTitle
+        label: 브라우저 탭·검색 결과 제목
+        widget: string
+        required: false
+        hint: '비워두면 영문 제목 뒤에 | I am the Seouler 가 자동으로 붙습니다.'
+      - name: description
+        label: 검색 결과에 뜨는 두 줄 설명
+        widget: text
+        required: false
+
+      # ---------- 여는 문단 ----------
+      - name: lede_en
+        label: 여는 문단 (영문)
+        widget: text
+        hint: '첫 소제목 위에 가운데 정렬 이탤릭으로 들어갑니다.'
+      - name: lede_ko
+        label: 여는 문단 (한글)
+        widget: text
+
+      # ---------- 홈페이지 카드 ----------
+      - name: card
+        label: 홈페이지에 보이는 카드
+        widget: object
+        collapsed: false
+        fields:
+          - name: title
+            label: 카드 제목
+            widget: string
+            hint: '글 제목과 달라도 됩니다.'
+          - name: cover
+            label: 카드 사진
+            widget: image
+          - name: cover_alt
+            label: 사진 설명 (화면 낭독기·검색용)
+            widget: string
+          - name: feature
+            label: 대표 글로 크게 걸기
+            widget: boolean
+            default: false
+            hint: '켜면 Journal 맨 위에 큰 카드로 나옵니다. 하나만 켜세요.'
+          - name: tone
+            label: 사진 없을 때 배경색
+            widget: select
+            options: [t1, t2, t3, t4, t5, t6]
+            default: t3
+          - name: excerpt
+            label: 카드 설명 (대표 글에만 표시)
+            widget: string
+            required: false
+          - name: tagline
+            label: 카드 한글 한 줄 (대표 글에만 표시)
+            widget: string
+            required: false
+
+      # ---------- 본문 ----------
+      - name: body_en
+        label: 본문 (영문)
+        widget: markdown
+        modes: [rich_text, raw]
+        buttons: [bold, italic]
+        editor_components: [image]
+        hint: '소제목은 "### 1. Title" 처럼 번호를 붙여 쓰면 번호가 회색으로 표시됩니다.'
+      - name: body_ko
+        label: 본문 (한글)
+        widget: markdown
+        modes: [rich_text, raw]
+        buttons: [bold, italic]
+        editor_components: [image]
+        hint: '사진은 영문 본문과 같은 위치에 같은 사진을 넣어주세요.'

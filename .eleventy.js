@@ -45,7 +45,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ photos: "photos" });
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+
+  // /admin is the CMS. It is copied through untouched — Eleventy must not try
+  // to read the curly braces in its config as template syntax.
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+  eleventyConfig.ignores.add("src/admin/**");
 
   /* Render a post body.
      lang === "ko" adds the .kr class the Korean panel needs.       */

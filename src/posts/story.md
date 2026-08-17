@@ -1,6 +1,4 @@
 ---
-layout: post.njk
-permalink: /story.html
 date: 2025-03-15
 seoTitle: "Every Day, I Travel — Right Here in Seoul | I am the Seouler"
 description: "The Macau and Hong Kong trip that changed how I see the city I was born in — the origin story of I am the Seouler."

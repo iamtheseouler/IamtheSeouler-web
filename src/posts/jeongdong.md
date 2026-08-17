@@ -1,6 +1,4 @@
 ---
-layout: post.njk
-permalink: /jeongdong.html
 date: 2026-08-10
 seoTitle: "While My Daughter Learns English, I Walk a Hundred Years | I am the Seouler"
 description: "Two hours in a language-school waiting room in Jeongdong, and a century of Korea five minutes away on foot."
