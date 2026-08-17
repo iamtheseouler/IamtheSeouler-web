@@ -50,8 +50,18 @@ src/_includes/nav.njk 상단 메뉴 (모든 페이지가 이 파일 하나를 �
 src/css/site.css      사이트 전체 스타일 한 벌
 src/admin/            /admin 화면 (Sveltia CMS)
 api/                  /admin 로그인용 GitHub OAuth 함수 2개
-photos/               사진
+src/photos/           사진 원본
 ```
+
+## 사진은 자동으로 줄여서 내보냅니다
+
+원본은 그대로 두고, 빌드할 때 avif·webp·jpeg로 여러 크기를 만들어 브라우저가
+화면에 맞는 것을 고르게 합니다. 갤러리 기준 7.7MB → 360KB.
+
+그래서 **저장 후 사이트에 반영되기까지 3~5분** 걸립니다. 예전 9초에서 늘어난
+건 사진을 다시 만드느라 그렇습니다. 사진이 많이 늘면 더 길어집니다. 급하면
+`.eleventy.js` 의 `formats` 에서 `"avif"` 를 빼세요. 빌드는 눈에 띄게 빨라지고
+파일은 조금 커집니다.
 
 ## 직접 손대야 할 때
 
