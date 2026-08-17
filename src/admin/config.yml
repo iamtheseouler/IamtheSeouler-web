@@ -6,7 +6,9 @@ backend:
   name: github
   repo: iamtheseouler/IamtheSeouler-web
   branch: main
-  base_url: https://iamtheseouler.com
+  # The apex domain redirects to www, so www is the address that actually
+  # serves /admin and therefore the one GitHub must redirect back to.
+  base_url: https://www.iamtheseouler.com
   auth_endpoint: api/auth
 
 # 저장 버튼을 누르면 바로 main 에 커밋되고 Vercel 이 다시 배포합니다.

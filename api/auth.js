@@ -27,7 +27,9 @@ module.exports = (req, res) => {
   const params = new URLSearchParams({
     client_id: clientId,
     redirect_uri: redirectUri,
-    scope: "repo",
+    // The repository is public, so the narrow scope is enough. `repo` would
+    // also hand this token every private repository on the account.
+    scope: "public_repo",
     state
   });
 
