@@ -10,7 +10,12 @@
 {% if description %}<meta name="description" content="{{ description }}">{% endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@300;400;500&family=JetBrains+Mono:wght@400;500{% if bodyClass == 'home' %}&family=Nothing+You+Could+Do{% endif %}&display=swap" rel="stylesheet">
+{# Korean is requested on its own line. Google serves Noto Serif KR as ~100
+   subset files, and bundling it with the Latin families has been observed to
+   leave the Korean subsets unfetched while the Latin ones load fine. Two
+   requests to the same host cost nothing and the Korean text stays reliable. #}
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500{% if bodyClass == 'home' %}&family=Nothing+You+Could+Do{% endif %}&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/site.css">
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
