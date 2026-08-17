@@ -17,8 +17,6 @@ publish_mode: simple
 media_folder: photos
 public_folder: /photos
 
-locale: ko
-
 collections:
   - name: posts
     label: 글

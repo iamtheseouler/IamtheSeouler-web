@@ -12,6 +12,12 @@
 </head>
 <body>
 <noscript>이 화면은 자바스크립트가 있어야 열립니다.</noscript>
-<script type="module" src="https://unpkg.com/@sveltia/cms@0.191.1/dist/sveltia-cms.mjs"></script>
+<!-- The bundle does not start itself here, so we start it. CMS_MANUAL_INIT
+     makes that explicit and keeps it from being started twice. -->
+<script>window.CMS_MANUAL_INIT = true;</script>
+<script type="module">
+  import "https://unpkg.com/@sveltia/cms@0.191.1/dist/sveltia-cms.mjs";
+  window.CMS.init();
+</script>
 </body>
 </html>
