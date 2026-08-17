@@ -44,9 +44,9 @@ src/_includes/        페이지 틀 (base = 공통, post = 글 페이지)
 src/index.njk         홈. Journal 카드는 글에서 자동 생성됩니다
 src/_data/site.json   이메일, 애널리틱스 토큰, 반복 문구
 src/_data/upcoming.json  Journal 의 "Coming soon" 자리표시자
-src/_data/gallery.json   갤러리 사진 목록
-src/gallery.njk       갤러리 페이지
+src/gallery.njk       갤러리 페이지 (사진은 글에서 자동으로 모입니다)
 src/_includes/nav.njk 상단 메뉴 (모든 페이지가 이 파일 하나를 씁니다)
+src/_includes/extras.njk  글 끝의 가로 스크롤 사진 줄
 src/css/site.css      사이트 전체 스타일 한 벌
 src/admin/            /admin 화면 (Sveltia CMS)
 api/                  /admin 로그인용 GitHub OAuth 함수 2개
@@ -55,8 +55,8 @@ src/photos/           사진 원본
 
 ## 사진은 자동으로 줄여서 내보냅니다
 
-원본은 그대로 두고, 빌드할 때 avif·webp·jpeg로 여러 크기를 만들어 브라우저가
-화면에 맞는 것을 고르게 합니다. 갤러리 기준 7.7MB → 360KB.
+원본은 그대로 두고, 빌드할 때 여러 크기로 다시 만들어 브라우저가 화면에 맞는
+것을 고르게 합니다. 갤러리 기준 7.7MB → 730KB.
 
 형식은 webp 와 jpeg 두 가지입니다. avif 도 만들 수 있고 파일이 절반으로
 줄지만, 만드는 데 서른 배가 걸려서 저장 후 반영까지 4분이 됩니다. 글을
