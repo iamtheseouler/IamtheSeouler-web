@@ -55,7 +55,7 @@ description: Every photograph from the journal, in one place — and a way back 
   <button class="lb-prev" type="button" aria-label="이전 사진">‹</button>
   <button class="lb-next" type="button" aria-label="다음 사진">›</button>
   <figure class="lb-frame">
-    <img id="lb-img" src="" alt="">
+    <img id="lb-img" alt="">
     <figcaption id="lb-cap"></figcaption>
   </figure>
 </div>
@@ -112,7 +112,7 @@ description: Every photograph from the journal, in one place — and a way back 
 
     function close() {
       box.hidden = true;
-      img.src = '';
+      img.removeAttribute('src');
       document.body.style.overflow = '';
       if (lastFocused) lastFocused.focus();
     }
