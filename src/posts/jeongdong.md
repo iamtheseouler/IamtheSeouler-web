@@ -1,31 +1,24 @@
 ---
+url_slug: ''
 date: 2026-08-10
-seoTitle: "While My Daughter Learns English, I Walk a Hundred Years | I am the Seouler"
-description: "Two hours in a language-school waiting room in Jeongdong, and a century of Korea five minutes away on foot."
-
-# --- headline (EN / KO) ---
-title_en: "While My Daughter Learns English, I Walk a Hundred Years"
-title_ko: "딸이 영어를 배우는 두 시간, 나는 백 년을 걸었다"
-sub_kr: "딸이 영어를 배우는 두 시간, 나는 백 년을 걸었다."
-meta_en: "Aug 2026 · Jeongdong"
-meta_ko: "2026년 8월 · 정동"
-
-# --- opening paragraph shown above the first section ---
-lede_en: |-
-  This began in waiting. The two hours left over after I send my daughter through the door of her language school. I started walking the streets around it. And walking, I came to understand what kind of ground I had been standing on.
-lede_ko: |-
-  이 글은 기다리다가 시작됐다. 아이를 학원에 들여보내고 남은 두 시간. 그 시간에 나는 그 주변을 걷기 시작했다. 그러다 알게 되었다. 내가 서 있던 이 자리가 어떤 자리인지를.
-
-# --- how this post looks on the home page ---
+title_en: While My Daughter Learns English, I Walk a Hundred Years
+title_ko: 딸이 영어를 배우는 두 시간, 나는 백 년을 걸었다
+sub_kr: 딸이 영어를 배우는 두 시간, 나는 백 년을 걸었다.
+meta_en: Aug 2026 · Jeongdong
+meta_ko: 2026년 8월 · 정동
+seoTitle: While My Daughter Learns English, I Walk a Hundred Years | I am the Seouler
+description: Two hours in a language-school waiting room in Jeongdong, and a century of Korea five minutes away on foot.
+lede_en: This began in waiting. The two hours left over after I send my daughter through the door of her language school. I started walking the streets around it. And walking, I came to understand what kind of ground I had been standing on.
+lede_ko: 이 글은 기다리다가 시작됐다. 아이를 학원에 들여보내고 남은 두 시간. 그 시간에 나는 그 주변을 걷기 시작했다. 그러다 알게 되었다. 내가 서 있던 이 자리가 어떤 자리인지를.
 card:
-  title: "While my daughter learns English, I walk a hundred years."
-  cover: "/photos/jeongdong-08-wall.jpg"
-  cover_alt: "My daughter at the Deoksugung wall, Jeongdong"
+  title: While my daughter learns English, I walk a hundred years.
+  cover: /photos/jeongdong-08-wall.jpg
+  cover_alt: My daughter at the Deoksugung wall, Jeongdong
   feature: false
-  tone: "t2"
-
-# --- the article itself ---
-body_en: |
+  tone: t2
+  excerpt: ''
+  tagline: ''
+body_en: |-
   ### 1. The Three O'Clock Bus
 
   For two weeks we leave kindergarten at three every afternoon. That is what it takes to make the 4:20 class at the British Council.
@@ -177,7 +170,7 @@ body_en: |
   It turns out you do not need a plane to walk a hundred years.
 
   Every day, I travel. I live my everyday like a traveller. Right here, in Seoul.
-body_ko: |
+body_ko: |-
   ### 1. 세 시의 버스
 
   2주 동안 우리는 매일 세 시에 유치원을 나온다. 영국문화원 네 시 이십 분 수업에 맞추려면 그래야 한다.
