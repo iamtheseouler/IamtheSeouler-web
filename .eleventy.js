@@ -69,7 +69,11 @@ module.exports = function (eleventyConfig) {
      rewritten here into a set of sizes the browser can choose from.        */
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     extensions: "html",
-    formats: ["avif", "webp", "jpeg"],
+    // avif files come out about half the size of webp, but take roughly
+    // thirty times as long to make — four minutes between pressing save and
+    // seeing the change, against a couple of hundred kilobytes a reader will
+    // never notice. Worth turning back on once posts stop needing edits.
+    formats: ["webp", "jpeg"],
     widths: [400, 800, 1400, "auto"],
     defaultAttributes: { loading: "lazy", decoding: "async" },
     sharpJpegOptions: { quality: 82, mozjpeg: true },
