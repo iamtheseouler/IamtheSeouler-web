@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>While My Daughter Learns English, I Walk a Hundred Years | I am the Seouler</title>
+<meta name="description" content="Two hours in a language-school waiting room in Jeongdong, and a century of Korea five minutes away on foot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F1E9;
+    --paper-2:#FBFAF6;
+    --celadon:#7C9A94;
+    --celadon-mid:#6E8B87;
+    --celadon-deep:#4E6B67;
+    --celadon-pale:#A9C0BA;
+    --ink:#2B2E2C;
+    --ink-soft:#585E59;
+    --ink-faint:#8C918B;
+    --line:rgba(43,46,44,0.13);
+    --line-soft:rgba(43,46,44,0.07);
+    --on-celadon:#FBFAF6;
+    --display:'Fraunces',serif;
+    --body:'Newsreader',serif;
+    --kr:'Noto Serif KR',serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 44px;}
+  .kr{font-family:var(--kr);font-weight:300;}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0;}
+  nav .mark{font-family:var(--display);font-weight:500;font-size:18px;letter-spacing:0.04em;}
+  nav .mark b{font-weight:500;font-style:italic;color:var(--celadon-deep);}
+  nav .links{display:flex;gap:28px;font-family:var(--mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);}
+  nav .links a:hover{color:var(--ink);}
+
+  .lang-toggle{display:flex;justify-content:center;gap:8px;padding:6px 0 0;}
+  .lang-toggle button{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);background:none;border:1px solid var(--line);border-radius:20px;padding:6px 16px;cursor:pointer;}
+  .lang-toggle button.active{color:var(--on-celadon);background:var(--celadon-deep);border-color:var(--celadon-deep);}
+  .lang-toggle button:hover:not(.active){color:var(--ink);border-color:var(--celadon-mid);}
+
+  .story-head{padding:50px 0 60px;text-align:center;border-bottom:1px solid var(--line);}
+  .story-meta{font-family:var(--mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--celadon-deep);margin-bottom:22px;}
+  .story-head h1{font-family:var(--display);font-weight:400;font-size:clamp(32px,5vw,50px);line-height:1.15;letter-spacing:-0.01em;margin:0 auto 18px;max-width:760px;}
+  .story-sub{font-family:var(--display);font-style:italic;font-size:20px;color:var(--celadon-deep);margin:0 0 14px;}
+  .story-sub-kr{font-family:var(--kr);font-weight:300;font-size:15px;color:var(--ink-faint);}
+
+  .story-body{padding:70px 0 40px;}
+  .story-inner{max-width:660px;margin:0 auto;}
+  .lede{font-family:var(--display);font-style:italic;font-size:22px;line-height:1.55;color:var(--ink-soft);margin:0 0 60px;text-align:center;}
+
+  .story-inner h3{font-family:var(--display);font-weight:500;font-size:24px;line-height:1.3;color:var(--celadon-deep);margin:64px 0 22px;padding-top:36px;border-top:1px solid var(--line-soft);}
+  .story-inner h3:first-of-type{margin-top:0;padding-top:0;border-top:none;}
+  .story-inner h3 .num{font-style:italic;font-weight:400;color:var(--ink-faint);margin-right:10px;}
+  .story-inner p{font-size:18px;line-height:1.85;margin:0 0 22px;color:var(--ink);}
+  .story-inner.kr h3{font-family:var(--kr);font-weight:500;}
+  .story-inner.kr p{font-family:var(--kr);font-weight:300;letter-spacing:0.002em;}
+  .story-head h1.kr{font-family:var(--kr);font-weight:500;}
+  .lede.kr{font-family:var(--kr);font-weight:300;font-style:normal;}
+
+  .shot{margin:38px 0 40px;}
+  .shot img{width:100%;border-radius:2px;}
+  .shot.wide{margin-left:calc((660px - 100%) / 2);}
+
+  .story-close{padding:20px 0 100px;text-align:center;}
+  .story-close .line1{font-family:var(--display);font-style:italic;font-size:26px;color:var(--celadon-deep);margin:0 0 12px;}
+  .story-close .line2{font-family:var(--kr);font-weight:300;font-size:16px;color:var(--ink-faint);margin:0 0 44px;}
+  .story-close a.back{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--line);padding-bottom:3px;}
+  .story-close a.back:hover{color:var(--celadon-deep);border-color:var(--celadon-deep);}
+
+  footer{padding:34px 0;border-top:1px solid var(--line);background:var(--paper);}
+  footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  footer .mark{font-family:var(--display);font-weight:500;font-size:15px;}
+  footer .info{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:var(--ink-faint);}
+
+  @media (max-width:640px){
+    .wrap{padding:0 24px;}
+    .story-inner p{font-size:17px;}
+    .lede{font-size:19px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a href="/" class="mark">I am the <b>Seouler</b></a>
+    <div class="links">
+      <a href="/#about">About</a>
+      <a href="/#journal">Journal</a>
+      <a href="/#subscribe">Subscribe</a>
+    </div>
+  </nav>
+  <div class="lang-toggle">
+    <button data-lang="en" class="active">EN</button>
+    <button data-lang="ko">한글</button>
+  </div>
+</div>
+
+<div id="panel-en" class="lang-panel">
+
+<header class="story-head">
+  <div class="wrap">
+    <div class="story-meta">Aug 2026 · Jeongdong</div>
+    <h1>While My Daughter Learns English, I Walk a Hundred Years</h1>
+    <p class="story-sub">Live where you are, like a Seouler.</p>
+    <p class="story-sub-kr">딸이 영어를 배우는 두 시간, 나는 백 년을 걸었다.</p>
+  </div>
+</header>
+
+<main class="story-body">
+  <div class="wrap">
+    <div class="story-inner">
+
+      <p class="lede">This began in waiting. The two hours left over after I send my daughter through the door of her language school. I started walking the streets around it. And walking, I came to understand what kind of ground I had been standing on.</p>
+
+      <h3><span class="num">1.</span>The Three O'Clock Bus</h3>
+      <p>For two weeks we leave kindergarten at three every afternoon. That is what it takes to make the 4:20 class at the British Council.</p>
+      <p>The hour when the day's heat has pooled and settled. I take her hand and we stand at the bus stop. On the bus toward City Hall she watches the window and I keep checking the time. We cannot be late.</p>
+      <p>If I am honest, it is a nuisance. Pulling her out early, riding all the way downtown, spending two hours out in the open, then retracing the whole route home. And in the thick of a summer like this one.</p>
+      <p>Still, I counted what was good. Two hours of English for her. Two hours entirely empty for me. And the time that belongs to the two of us once the class lets out.</p>
+      <p>These two weeks were meant for English. But something else came with them. Not going straight home when the class ends. Since we're out anyway — dinner together, a slow look around the neighbourhood, then back. I quietly moved the hours I had counted as burden into the column marked bonus. Looking at the city I live in with a stranger's eyes. That is how I decided to live.</p>
+      <p>Until twenty past six. When the glass door closes and her small back disappears, I am left on the street holding those two hours.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-01-corridor.jpg" alt="My daughter walking down the corridor into the British Council" loading="lazy"></figure>
+
+      <p>And I walked. I thought I knew this street. I had walked it before, more than once, for other reasons. Nothing new here, I assumed. A loop around the palace wall, a coffee somewhere, and two hours would be gone.</p>
+
+      <h3><span class="num">2.</span>English, a Hundred and Forty Years Ago</h3>
+      <p>Only by going there did I learn what ground the building stood on — the building my daughter walks into to learn English. It was the site of Pai Chai Hakdang.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-02-brick.jpg" alt="The blue glass tower and the red brick hall beside it" loading="lazy"></figure>
+
+      <p>Beside it stands a house of red brick. A hundred years ago it held the school's classrooms; now it is a museum. In front of it, a statue of a man. Appenzeller.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-03-statue.jpg" alt="The Appenzeller statue" loading="lazy"></figure>
+
+      <p>The name was not unknown to me. I had learned it at school; it had turned up on exams. Appenzeller — Pai Chai Hakdang — modern education. Three boxes memorised together, then blurred by time.</p>
+      <p>I stood there and read the plaque. A name that had lain pressed flat inside a textbook took on thickness.</p>
+      <p>August 1885. A young missionary of twenty-seven, newly arrived from America, sat two Korean young men down and began teaching them English. The following year King Gojong granted the school its name. Pai Chai — to cultivate the gifted. Modern education in this country began here.</p>
+      <p>So a hundred and forty years ago, someone on this same hill was learning English. The very language my daughter is learning now. And with far more urgency than I have ever felt.</p>
+      <p>I had thought I was doing something very modern, bringing my child here. I was not. I was standing in a very old line.</p>
+
+      <h3><span class="num">3.</span>The Girl from My School</h3>
+
+      <figure class="shot"><img src="/photos/jeongdong-04-plaque.jpg" alt="The plaque beside the Appenzeller statue" loading="lazy"></figure>
+
+      <p>The plaque recorded his end as well.</p>
+      <p>June 1902. A night ship bound from Jemulpo for Mokpo, carrying him to a Bible translation conference, struck another vessel in heavy fog. She went down in two minutes and he got clear of her. Then he went back in, to bring out the young Korean man and the schoolgirl travelling with him.</p>
+      <p>He did not come back. He was forty-four.</p>
+      <p>That much alone would have sat heavy in me. But what stopped me was a single word lodged in that one line.</p>
+      <p>The girl was a student at Chungshin Girls' School.<br>Chungshin Girls' Middle School. Chungshin Girls' High School. My school.</p>
+      <p>I had assumed there was nothing at all between me and an American who died a hundred and twenty years ago. But he turned back into a sinking ship for a girl from my school. That student whose name I will never know had passed through the same gate I did, only a century ahead of me.</p>
+      <p>There are moments when history stops being somebody else's business. Mine came standing in front of a plaque.</p>
+      <p>It must have been a strange country to him. He crossed over at twenty-seven and died at forty-four in the sea off its coast.</p>
+      <p>The young men who gathered to learn from him were no different. On this hill, in those years, English was not a way to a good job. It was the language of people who believed that to protect a country you first had to understand how the world was turning.</p>
+      <p>Standing there, I felt myself grow smaller.</p>
+      <p>Because that is not why my child is learning English. So she can see a wider world, and hold her own wherever she lands. A thoroughly private, thoroughly ordinary reason.</p>
+      <p>The thought followed me the whole way as I walked out of there.</p>
+
+      <h3><span class="num">4.</span>Five Minutes on Foot</h3>
+      <p>Five minutes on foot, it said.</p>
+      <p>The interest that had started at that plaque would not settle, so I began looking the neighbourhood up. That is how I first came across the name Jungmyeongjeon. The place where the treaty of 1905 was signed.</p>
+      <p>I hadn't known. I had walked Jeongdong-gil more times than I could count and never knew such a building was there. Invisible from the main road, reached only through a narrow lane beside the Jeongdong Theater — not a place anyone stumbles upon.</p>
+      <p>The street had not changed. My attention had.</p>
+      <p>I passed the church Appenzeller founded and walked into that lane.</p>
+      <p>Where the lane ended, a house of red brick stood. The moment I came to a stop in front of it, time seemed to draw back a hundred years.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-05-jungmyeongjeon.jpg" alt="Jungmyeongjeon" loading="lazy"></figure>
+
+      <p>It was beautiful. There is a beauty that comes only to things that have endured a long while. I looked up at it for some time, then went in.</p>
+      <p>This house had been Gojong's study. A room where he kept his books and his treasures and received foreign envoys. On the night of 17 November 1905 it was surrounded by Japanese troops, and inside it the treaty was signed. The Korean Empire lost the right to conduct its own diplomacy.</p>
+      <p>Diplomatic sovereignty. The right to speak to the world in your own voice.</p>
+      <p>Inside that beauty, a country lost its voice.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-06-treaty.jpg" alt="The signing of the 1905 treaty, reconstructed inside Jungmyeongjeon" loading="lazy"></figure>
+
+      <p>Standing where the scene has been rebuilt, I was angry. Some had come here to help. Others had come to take.</p>
+      <p>When the world came pouring in, what if we had been just a little stronger.</p>
+      <p>The will to learn was already here then. There was simply no power to protect it.</p>
+
+      <h3><span class="num">5.</span>Twenty Past Six</h3>
+      <p>Twenty past six. The glass door opens and out she comes.</p>
+      <p>How was today. Was it fun?</p>
+      <p><em>Yes.</em> She says it with her whole face lit and throws up a thumb. It was fun. I want to come again. She seems sorry the class is over.</p>
+      <p>Thank goodness she likes it here. The nuisance of leaving kindergarten at three is paid back by this one face.</p>
+      <p>I take her hand. I don't tell her where I have just been.</p>
+      <p>We don't get straight on the bus. There is dinner to eat.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-07-courtyard.jpg" alt="My daughter crossing the courtyard of the old school" loading="lazy"></figure>
+
+      <p>Jeongdong-gil has many old shops. Walking alone in the afternoons I had noticed them again and again. Houses that have held this ground far longer than I have. Someday, I thought, I would sit down in one of them and have a bowl of something.</p>
+      <p>But the two of us can't easily go in. Much of it is too spicy for her, and ordering a single dish between us doesn't quite work. Above all, if my particular child takes one spoonful and announces she won't eat, we are stuck.</p>
+      <p>So what we eat is gimbap, or toast, or noodles. Things you can get anywhere. I fold the wish away and choose what she can eat.</p>
+      <p>On a street a hundred years old, we ate gimbap.</p>
+      <p>The old things on this street are not shut inside a museum. They simply stand there, and they are simply open for business. People walk past them, push the door, go in, empty a bowl, come out. And in among them, there we were.</p>
+      <p>It was an evening of no importance at all.</p>
+
+      <h3><span class="num">6.</span>The Same Street</h3>
+      <p>After dinner we walked a little further. Along the palace wall, and past the plaza in front of City Hall.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-08-wall.jpg" alt="My daughter at the Deoksugung wall" loading="lazy"></figure>
+
+      <figure class="shot"><img src="/photos/jeongdong-09-plaza.jpg" alt="Seoul Plaza, the old city hall and the new one behind her" loading="lazy"></figure>
+
+      <p>The plaza is full of foreigners. Wheeling suitcases, checking maps, taking pictures in front of the palace.</p>
+      <p>There are many foreigners in our neighbourhood too. Students who came here to study have lived there a long time, and lately I sometimes see travellers as well. Seoul has become, without my noticing, a city the world comes to.</p>
+      <p>A hundred and twenty years ago this street was full of foreigners as well. Only their reasons for being here were not the same.</p>
+      <p>On the bus she falls asleep almost at once. I look at her face. The face that came out through the glass door a little while ago with a thumb in the air.</p>
+      <p>The answer to the thought that had been following me for days was in that face. It was not that my child's reason for learning English was too small to be worth anything. That it <em>could</em> be small — that was what they had wanted.</p>
+      <p>The right that someone on this street failed, in the end, to keep a hundred and twenty years ago, my daughter was simply born holding. And she uses that language laughing. <em>Yes.</em></p>
+      <p>Some people board a plane to see this street. I came because of my daughter's class. It is the same street.</p>
+      <p>It turns out you do not need a plane to walk a hundred years.</p>
+      <p>Every day, I travel. I live my everyday like a traveller. Right here, in Seoul.</p>
+
+    </div>
+  </div>
+</main>
+
+</div>
+
+<div id="panel-ko" class="lang-panel" hidden>
+
+<header class="story-head">
+  <div class="wrap">
+    <div class="story-meta">2026년 8월 · 정동</div>
+    <h1 class="kr" style="font-size:clamp(28px,4.6vw,44px);">딸이 영어를 배우는 두 시간, 나는 백 년을 걸었다</h1>
+    <p class="story-sub">Live where you are, like a Seouler.</p>
+  </div>
+</header>
+
+<main class="story-body">
+  <div class="wrap">
+    <div class="story-inner kr">
+
+      <p class="lede kr">이 글은 기다리다가 시작됐다. 아이를 학원에 들여보내고 남은 두 시간. 그 시간에 나는 그 주변을 걷기 시작했다. 그러다 알게 되었다. 내가 서 있던 이 자리가 어떤 자리인지를.</p>
+
+      <h3 class="kr"><span class="num">1.</span>세 시의 버스</h3>
+      <p>2주 동안 우리는 매일 세 시에 유치원을 나온다. 영국문화원 네 시 이십 분 수업에 맞추려면 그래야 한다.</p>
+      <p>한낮의 열기가 가득 고여 있는 시간. 아이 손을 잡고 정류장에 선다. 시청 쪽으로 가는 버스에 오르면 아이는 창밖을 보고 나는 자꾸 시계를 본다. 늦으면 안 되니까.</p>
+      <p>솔직히 말하면 번거로운 일이다. 아이를 일찍 데리고 나와 도심까지 들어와서 두 시간을 밖에서 보내고 다시 그 길을 되짚어 돌아오는 일. 그것도 무더위가 한창인 이 여름날에.</p>
+      <p>그래도 나는 좋은 점을 세어봤다. 아이에겐 영어를 배우는 두 시간. 나에겐 온전히 비어 있는 두 시간. 그리고 수업이 끝난 뒤 우리 둘에게 남는 시간.</p>
+      <p>이 2주는 원래 영어를 위한 시간이었다. 그런데 덤이 하나 더 있었다. 수업이 끝나면 곧장 집으로 가지 않는 것. 이왕 나온 김에 아이와 저녁을 먹고 이 동네를 조금씩 둘러보다 돌아가는 것. 짐이라고 생각했던 시간을 나는 슬쩍 덤으로 옮겨 적었다. 내가 사는 도시를 낯선 눈으로 들여다보는 일. 나는 그렇게 살기로 했으니까.</p>
+      <p>여섯 시 이십 분까지. 유리문이 닫히고 아이의 뒷모습이 사라지면 나는 그 두 시간을 손에 든 채 거리에 남겨진다.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-01-corridor.jpg" alt="영국문화원 복도를 걸어 들어가는 아이" loading="lazy"></figure>
+
+      <p>그리고 걸었다. 나는 이 길을 잘 안다고 생각했다. 전에도 다른 이유로 여러 번 걸어본 거리였으니까. 새로울 게 없다고 여겼다. 궁 담장을 한 바퀴 돌고 어디 앉아 커피나 한 잔 하면 두 시간쯤은 가겠거니 했다.</p>
+
+      <h3 class="kr"><span class="num">2.</span>백사십 년 전의 영어</h3>
+      <p>아이가 영어를 배우러 들어간 건물이 어느 자리 위에 세워진 것인지 나는 가보고서야 알았다. 배재학당 터였다.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-02-brick.jpg" alt="파란 유리 건물과 나란히 선 붉은 벽돌 동관" loading="lazy"></figure>
+
+      <p>바로 옆에 붉은 벽돌집 한 채가 서 있다. 백 년 전 배재학당의 교실이었고 지금은 역사박물관이다. 그 앞에 한 사람의 동상이 있다. 아펜젤러.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-03-statue.jpg" alt="아펜젤러 동상" loading="lazy"></figure>
+
+      <p>모르는 이름은 아니었다. 학교에서 배웠고 시험에도 나왔다. 아펜젤러 — 배재학당 — 근대 교육. 그렇게 세 칸으로 묶어 외웠다가 오래전에 흐려진 이름.</p>
+      <p>나는 그 앞에 서서 안내판을 읽었다. 교과서 속에 납작하게 눌려 있던 이름이 그제야 두께를 얻었다.</p>
+      <p>1885년 8월. 미국에서 온 스물일곱의 젊은 선교사가 조선 청년 둘을 앉혀놓고 영어를 가르치기 시작했다. 이듬해 고종은 그 학당에 이름을 내렸다. 배재(培材) — 인재를 기른다는 뜻. 우리나라 근대 교육이 여기서 시작되었다.</p>
+      <p>그러니까 백사십 년 전에도 이 언덕에서 누군가는 영어를 배우고 있었다. 내 딸이 지금 배우고 있는 그 언어를. 아마 나보다 훨씬 절박하게.</p>
+      <p>나는 아이를 데리고 아주 현대적인 일을 하고 있다고 생각했다. 그런데 아니었다. 나는 아주 오래된 줄에 서 있었던 것이다.</p>
+
+      <h3 class="kr"><span class="num">3.</span>나의 선배</h3>
+
+      <figure class="shot"><img src="/photos/jeongdong-04-plaque.jpg" alt="아펜젤러 안내판" loading="lazy"></figure>
+
+      <p>안내판에는 그의 마지막도 적혀 있었다.</p>
+      <p>1902년 6월. 성서 번역 회의에 가려고 제물포에서 목포로 향하던 밤배가 짙은 안개 속에서 다른 배와 부딪쳤다. 배는 2분 만에 가라앉았고 그는 빠져나왔다. 그런데 함께 타고 있던 조선인 청년과 여학생을 데리러 다시 배 안으로 들어갔다.</p>
+      <p>돌아오지 못했다. 마흔넷이었다.</p>
+      <p>여기까지만으로도 충분히 먹먹한 이야기다. 그런데 나를 멈춰 세운 건 그 한 줄 안에 박혀 있던 단어 하나였다.</p>
+      <p>그 여학생은 정신여학교 학생이었다.<br>정신여자중학교. 정신여자고등학교. 내가 나온 학교다.</p>
+      <p>백이십 년 전에 죽은 미국인과 나 사이에 아무 접점이 없다고 생각했다. 그런데 그는 내 학교 선배를 구하려고 가라앉는 배로 돌아갔다. 이름도 모르는 그 여학생은 나보다 백 년쯤 앞서 같은 교문을 드나든 사람이었다.</p>
+      <p>역사가 갑자기 남의 일이 아니게 되는 순간이 있다. 나에겐 그게 안내판 앞이었다.</p>
+      <p>낯선 나라였을 것이다. 그는 스물일곱에 건너와 마흔넷에 이 나라 앞바다에서 죽었다.</p>
+      <p>그에게 배우겠다고 모여든 청년들도 다르지 않았다. 그때 이 언덕에서 영어는 좋은 직장을 얻기 위한 것이 아니었다. 세상이 어떻게 돌아가는지 알아야 나라를 지킬 수 있다고 믿었던 사람들의 언어였다.</p>
+      <p>그 앞에서 나는 조금 작아졌다.</p>
+      <p>내 아이가 영어를 배우는 이유는 그런 게 아니니까. 넓은 세상을 보고 어디서든 자기 몫을 하는 사람이 되라는 것. 지극히 사적이고 지극히 평범한 이유다.</p>
+      <p>그곳을 빠져나와 걷는 내내 그 생각이 나를 따라왔다.</p>
+
+      <h3 class="kr"><span class="num">4.</span>걸어서 오 분</h3>
+      <p>걸어서 오 분이라고 했다.</p>
+      <p>안내판 앞에서 생긴 관심이 쉽게 가라앉지 않아 나는 이 동네를 찾아보기 시작했다. 그러다 중명전이라는 이름을 처음 보았다. 을사늑약이 맺어진 곳이었다.</p>
+      <p>몰랐다. 정동길은 몇 번이나 걸었는데 그런 건물이 있는 줄도 몰랐다. 큰길에서는 보이지 않고 정동극장 옆 좁은 길로 들어가야 나온다니 우연히는 만날 수 없는 자리였다.</p>
+      <p>거리가 달라진 게 아니라 내 관심이 달라진 것이었다.</p>
+      <p>아펜젤러가 세운 정동제일교회를 지나 나는 그 골목으로 걸어 들어갔다.</p>
+      <p>골목이 끝나는 자리에 붉은 벽돌집이 서 있었다. 그 앞에 서는 순간 시간이 백 년쯤 뒤로 물러난 것 같았다.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-05-jungmyeongjeon.jpg" alt="중명전 정면" loading="lazy"></figure>
+
+      <p>아름다웠다. 오래 견딘 것들에게만 생기는 아름다움이 있다. 나는 한참을 올려다보다 안으로 들어갔다.</p>
+      <p>이 집은 고종의 서재였다. 책과 보물을 두고 외국 사절을 맞던 방이었다. 1905년 11월 17일 밤 이 건물은 일본군에게 둘러싸였고 그 안에서 을사늑약이 맺어졌다. 대한제국은 외교권을 잃었다.</p>
+      <p>외교권. 세계와 직접 말을 섞을 권리.</p>
+      <p>그 아름다움 안에서 나라가 말을 잃었다.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-06-treaty.jpg" alt="을사늑약 체결 장면 재현" loading="lazy"></figure>
+
+      <p>그 장면을 재현한 곳에서 나는 분노했다. 누군가는 도우러 왔고 다른 누군가는 뺏으러 왔다.</p>
+      <p>세계가 밀려들어 오던 그때 우리가 조금만 더 단단한 나라였다면 어땠을까.</p>
+      <p>배우려는 마음은 그때도 여기 있었다. 다만 그 마음을 지켜줄 힘이 없었을 뿐이다.</p>
+
+      <h3 class="kr"><span class="num">5.</span>여섯 시 이십 분</h3>
+      <p>여섯 시 이십 분. 유리문이 열리고 아이가 나온다.</p>
+      <p>오늘은 어땠어. 재미있었어?</p>
+      <p>예스. 아이는 환한 얼굴로 그렇게 대답하고 엄지를 척 들어 보인다. 재미있었어. 또 오고 싶어. 수업이 끝나는 게 아쉬운 모양이다.</p>
+      <p>이곳을 좋아하니 다행이다. 세 시에 유치원을 나서던 그 번거로움이 이 얼굴 하나로 갚아진다.</p>
+      <p>아이 손을 잡는다. 내가 방금 어디에 다녀왔는지는 말하지 않았다.</p>
+      <p>우리는 곧장 버스를 타지 않는다. 저녁을 먹어야 하니까.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-07-courtyard.jpg" alt="옛 교사 앞마당을 걸어가는 아이" loading="lazy"></figure>
+
+      <p>정동길에는 오래된 가게가 많다. 혼자 걷던 낮에 몇 번이나 눈여겨봤다. 나보다 훨씬 오래 이 자리를 지킨 집들. 언젠가 저기 앉아 한 그릇 먹어보고 싶었다.</p>
+      <p>그런데 아이와 둘이서는 들어가기가 어렵다. 매운 것이 많아 아이가 먹을 수 없고 둘이 들어가 하나만 시키기도 마땅치 않다. 무엇보다 입맛이 까다로운 아이가 한 숟가락 뜨고 안 먹겠다고 하면 그때부터 난감해진다.</p>
+      <p>그래서 우리가 먹는 건 김밥이나 토스트나 국수다. 어디서든 먹을 수 있는 것들. 아쉬움은 접어두고 아이가 먹을 수 있는 쪽을 고른다.</p>
+      <p>백 년쯤 된 거리에서 우리는 김밥을 먹었다.</p>
+      <p>이 거리의 오래된 것들은 박물관 안에 들어가 있지 않다. 그냥 서 있고 그냥 영업 중이다. 사람들이 그 앞을 지나가고 문을 열고 들어가고 한 그릇을 비우고 나온다. 그리고 그 사이에 우리가 있었다.</p>
+      <p>대단할 것 없는 저녁이었다.</p>
+
+      <h3 class="kr"><span class="num">6.</span>같은 거리</h3>
+      <p>저녁을 먹고 우리는 조금 더 걸었다. 궁 담장을 따라 걷다가 시청 앞 광장을 지났다.</p>
+
+      <figure class="shot"><img src="/photos/jeongdong-08-wall.jpg" alt="덕수궁 돌담길에 선 아이" loading="lazy"></figure>
+
+      <figure class="shot"><img src="/photos/jeongdong-09-plaza.jpg" alt="서울광장을 걸어가는 아이. 뒤로 옛 시청과 새 시청" loading="lazy"></figure>
+
+      <p>광장에는 외국인이 많다. 캐리어를 끌고 지도를 확인하고 궁 앞에서 사진을 찍는다.</p>
+      <p>우리 동네에도 외국인이 많다. 오래전부터 공부하러 온 학생들이 살았고 요즘은 여행 온 사람들도 종종 보인다. 서울은 어느새 세계가 오는 도시가 되었다.</p>
+      <p>백이십 년 전에도 이 거리에는 외국인이 많았다. 다만 그들이 여기 온 이유는 지금과 달랐다.</p>
+      <p>버스에 오르면 아이는 금세 잠이 든다. 나는 그 얼굴을 본다. 조금 전 유리문을 열고 나오며 엄지를 척 들던 얼굴을.</p>
+      <p>며칠 동안 나를 따라오던 생각의 답이 그 얼굴에 있었다. 내 아이가 영어를 배우는 이유가 사소해서 부끄러운 게 아니었다. 사소해질 수 있게 된 것. 그게 그들이 원했던 결과였다.</p>
+      <p>백이십 년 전 이 거리에서 누군가가 끝내 지키지 못한 권리를 내 아이는 그냥 가지고 태어났다. 그리고 그 말을 웃으면서 쓴다. 예스.</p>
+      <p>누군가는 이 거리를 보려고 비행기를 타고 온다. 나는 아이 학원 때문에 왔다. 같은 거리다.</p>
+      <p>비행기를 타야만 백 년을 걸을 수 있는 건 아니었다.</p>
+      <p>나는 매일 여행한다. 일상을 여행자처럼 산다. 바로 이곳 서울에서.</p>
+
+    </div>
+  </div>
+</main>
+
+</div>
+
+<div class="story-close">
+  <div class="wrap">
+    <p class="line1">So I decided to live where I am, like a Seouler.</p>
+    <p class="line2">그렇게 나는, 있는 곳에서 서울러처럼 살아보기로 했다.</p>
+    <a class="back" href="/#journal">← Back to the Journal</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="mark">I am the Seouler</div>
+    <div class="info">© 2026 · iamtheseouler@gmail.com</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('.lang-toggle button');
+    var panelEn = document.getElementById('panel-en');
+    var panelKo = document.getElementById('panel-ko');
+    function setLang(lang){
+      panelEn.hidden = lang !== 'en';
+      panelKo.hidden = lang !== 'ko';
+      buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+      try{ localStorage.setItem('seouler-story-lang', lang); }catch(e){}
+    }
+    buttons.forEach(function(b){
+      b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+    });
+    var saved;
+    try{ saved = localStorage.getItem('seouler-story-lang'); }catch(e){}
+    setLang(saved === 'ko' ? 'ko' : 'en');
+  })();
+</script>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0f9b872475084944a7b6597038b2b4f3"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
