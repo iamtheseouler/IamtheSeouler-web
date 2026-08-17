@@ -18,42 +18,6 @@ media_folder: photos
 public_folder: /photos
 
 collections:
-  - name: gallery
-    label: 갤러리
-    files:
-      - name: photos
-        label: 갤러리 사진
-        file: src/_data/gallery.json
-        format: json
-        description: 위에 있는 사진이 갤러리 앞쪽에 놓입니다. 끌어서 순서를 바꿀 수 있습니다.
-        fields:
-          - name: photos
-            label: 사진
-            label_singular: 사진
-            widget: list
-            summary: '{{fields.alt}}'
-            fields:
-              - name: image
-                label: 사진
-                widget: image
-              - name: alt
-                label: 사진 설명
-                widget: string
-                hint: '화면 낭독기와 검색이 읽는 설명입니다. 보이지는 않습니다.'
-              - name: meta
-                label: 언제·어디서
-                widget: string
-                required: false
-                hint: '예: 2026년 8월 · 정동'
-              - name: caption_en
-                label: 한 줄 (영문)
-                widget: text
-                required: false
-              - name: caption_ko
-                label: 한 줄 (한글)
-                widget: text
-                required: false
-
   - name: posts
     label: 글
     label_singular: 글
@@ -180,3 +144,29 @@ collections:
         buttons: [bold, italic, heading-three]
         editor_components: [image]
         hint: '사진은 영문 본문과 같은 위치에 같은 사진을 넣어주세요.'
+
+      # ---------- 다 싣지 못한 사진 ----------
+      - name: extras
+        label: 다 싣지 못한 사진
+        label_singular: 사진
+        widget: list
+        required: false
+        collapsed: true
+        summary: '{{fields.alt}}'
+        hint: '글 맨 아래에 옆으로 넘겨보는 줄로 붙고, 갤러리에도 함께 올라갑니다.'
+        fields:
+          - name: image
+            label: 사진
+            widget: image
+          - name: alt
+            label: 사진 설명
+            widget: string
+            hint: '화면 낭독기와 검색이 읽습니다. 화면에 보이지는 않습니다.'
+          - name: caption_en
+            label: 한 줄 (영문)
+            widget: string
+            required: false
+          - name: caption_ko
+            label: 한 줄 (한글)
+            widget: string
+            required: false

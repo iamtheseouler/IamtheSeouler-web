@@ -51,6 +51,26 @@ md.renderer.rules.image = function (tokens, idx) {
   return `<figure class="shot"><img src="${esc(src)}" alt="${esc(alt)}"${sizeAttrs(src)} loading="lazy"></figure>`;
 };
 
+/* Photos written into a post body:  ![alt](/photos/x.jpg "one line")
+   The alt is what a screen reader says; the optional title is the line that
+   shows in the gallery. It stays out of the essay itself on purpose.      */
+function parsePhotos(markdown) {
+  const found = [];
+  const pattern = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g;
+  let match;
+  while ((match = pattern.exec(markdown || ""))) {
+    found.push({ alt: match[1], src: match[2], caption: match[3] || "" });
+  }
+  return found;
+}
+
+/* "Mar 2025 · Origin" -> "Origin". This is the word on the gallery's filter
+   buttons, so keep the part after the dot short when writing a post.      */
+function shortLabel(data) {
+  const meta = (data.meta_en || "").split("·").pop().trim();
+  return meta || (data.title_en || "").split(/[,—]/)[0].trim();
+}
+
 // A paragraph that holds nothing but one image should not be wrapped in <p>.
 function isLoneImage(tokens, idx) {
   const inline = tokens[idx + 1];
@@ -107,6 +127,63 @@ module.exports = function (eleventyConfig) {
 
   // ` width="…" height="…"` for a photo, or nothing if it cannot be measured.
   eleventyConfig.addFilter("size", sizeAttrs);
+
+  /* Every photo on the site belongs to a post: either it sits in the body, or
+     it is one of the extras that did not fit. The gallery is all of them,
+     newest post first, each still knowing where it came from.               */
+  eleventyConfig.addCollection("galleryPhotos", (api) => {
+    const posts = api
+      .getFilteredByGlob("src/posts/*.md")
+      .sort((a, b) => b.date - a.date);
+
+    const out = [];
+    for (const post of posts) {
+      const d = post.data;
+      const url = (post.url || "").replace(/\.html$/, "");
+      const label = shortLabel(d);
+      const en = parsePhotos(d.body_en);
+      const ko = parsePhotos(d.body_ko);
+
+      en.forEach((photo, i) => {
+        const twin = ko[i] && ko[i].src === photo.src ? ko[i] : ko.find((k) => k.src === photo.src);
+        out.push({
+          image: photo.src,
+          alt: photo.alt,
+          caption_en: photo.caption,
+          caption_ko: twin ? twin.caption : "",
+          postUrl: url,
+          postTitle: d.title_en,
+          label
+        });
+      });
+
+      for (const extra of d.extras || []) {
+        if (!extra || !extra.image) continue;
+        out.push({
+          image: extra.image,
+          alt: extra.alt || "",
+          caption_en: extra.caption_en || "",
+          caption_ko: extra.caption_ko || "",
+          postUrl: url,
+          postTitle: d.title_en,
+          label
+        });
+      }
+    }
+    return out;
+  });
+
+  // The distinct filter buttons across the top of the gallery.
+  eleventyConfig.addCollection("galleryLabels", (api) => {
+    const seen = [];
+    for (const post of api
+      .getFilteredByGlob("src/posts/*.md")
+      .sort((a, b) => b.date - a.date)) {
+      const label = shortLabel(post.data);
+      if (label && !seen.includes(label)) seen.push(label);
+    }
+    return seen;
+  });
 
   return {
     dir: {

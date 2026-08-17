@@ -2,8 +2,9 @@
 layout: base.njk
 permalink: /gallery.html
 seoTitle: The Gallery | I am the Seouler
-description: Photographs from an everyday voyager in Seoul, and from the road that led back to it.
+description: Every photograph from the journal, in one place — and a way back to the story each one came from.
 ---
+{% set photos = collections.galleryPhotos %}
 <div class="wrap">
   {% include "nav.njk" %}
 </div>
@@ -17,27 +18,30 @@ description: Photographs from an everyday voyager in Seoul, and from the road th
 </header>
 
 <main class="gallery-page">
+  {%- if photos.length %}
   <div class="wrap">
-    {%- if gallery.photos and gallery.photos.length %}
+    {%- if collections.galleryLabels.length > 1 %}
+    <div class="chips" role="group" aria-label="글별로 보기">
+      <button type="button" class="chip is-on" data-filter="*">All</button>
+      {%- for label in collections.galleryLabels %}
+      <button type="button" class="chip" data-filter="{{ label }}">{{ label }}</button>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+
     <div class="photo-wall">
-      {%- for p in gallery.photos %}
-      <figure class="plate" data-index="{{ loop.index0 }}" tabindex="0" role="button"
-              aria-label="{{ p.alt }} — 크게 보기">
+      {%- for p in photos %}
+      <figure class="plate" data-index="{{ loop.index0 }}" data-label="{{ p.label }}"
+              tabindex="0" role="button" aria-label="{{ p.alt }} — 크게 보기">
         <img src="{{ p.image }}" alt="{{ p.alt }}"{{ p.image | size | safe }} loading="lazy">
-        {%- if p.meta or p.caption_en or p.caption_ko %}
-        <figcaption>
-          {%- if p.meta %}<span class="plate-meta">{{ p.meta }}</span>{% endif %}
-          {%- if p.caption_en %}<span class="plate-cap">{{ p.caption_en }}</span>{% endif %}
-          {%- if p.caption_ko %}<span class="plate-cap-kr">{{ p.caption_ko }}</span>{% endif %}
-        </figcaption>
-        {%- endif %}
       </figure>
       {%- endfor %}
     </div>
-    {%- else %}
-    <p class="gallery-empty">아직 올린 사진이 없습니다.</p>
-    {%- endif %}
+    <p class="wall-empty" hidden>이 글에는 아직 사진이 없습니다.</p>
   </div>
+  {%- else %}
+  <div class="wrap"><p class="gallery-empty">아직 올린 사진이 없습니다.</p></div>
+  {%- endif %}
 </main>
 
 <div class="story-close">
@@ -56,35 +60,50 @@ description: Photographs from an everyday voyager in Seoul, and from the road th
   </figure>
 </div>
 
-<script type="application/json" id="gallery-data">{{ gallery.photos | dump | safe }}</script>
+<script type="application/json" id="gallery-data">{{ photos | dump | safe }}</script>
 <script>
   (function () {
     var dataEl = document.getElementById('gallery-data');
     var photos = dataEl ? JSON.parse(dataEl.textContent) : [];
     if (!photos.length) return;
 
+    var plates = [].slice.call(document.querySelectorAll('.plate'));
+    var wallEmpty = document.querySelector('.wall-empty');
     var box = document.getElementById('lightbox');
     var img = document.getElementById('lb-img');
     var cap = document.getElementById('lb-cap');
-    var current = 0;
+    var shown = photos.map(function (_, i) { return i; });
+    var at = 0;
     var lastFocused = null;
 
-    function show(i) {
-      current = (i + photos.length) % photos.length;
-      var p = photos[current];
-      img.src = p.image;
-      img.alt = p.alt || '';
-      var parts = '';
-      if (p.meta) parts += '<span class="lb-meta">' + p.meta + '</span>';
-      if (p.caption_en) parts += '<span class="lb-cap-en">' + p.caption_en + '</span>';
-      if (p.caption_ko) parts += '<span class="lb-cap-kr">' + p.caption_ko + '</span>';
-      cap.innerHTML = parts;
-      cap.hidden = !parts;
+    function esc(s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+      });
     }
 
-    function open(i) {
+    function paint() {
+      var p = photos[shown[at]];
+      img.src = p.image;
+      img.alt = p.alt || '';
+      var html = '';
+      if (p.caption_en) html += '<span class="lb-cap-en">' + esc(p.caption_en) + '</span>';
+      if (p.caption_ko) html += '<span class="lb-cap-kr">' + esc(p.caption_ko) + '</span>';
+      if (p.postUrl) {
+        html += '<a class="lb-link" href="' + esc(p.postUrl) + '">' +
+                esc(p.postTitle || '이 사진이 있는 글') + ' 보기 →</a>';
+      }
+      cap.innerHTML = html;
+    }
+
+    function step(by) { at = (at + by + shown.length) % shown.length; paint(); }
+
+    function open(index) {
+      var where = shown.indexOf(index);
+      if (where === -1) return;
       lastFocused = document.activeElement;
-      show(i);
+      at = where;
+      paint();
       box.hidden = false;
       document.body.style.overflow = 'hidden';
       box.querySelector('.lb-close').focus();
@@ -97,23 +116,40 @@ description: Photographs from an everyday voyager in Seoul, and from the road th
       if (lastFocused) lastFocused.focus();
     }
 
-    document.querySelectorAll('.plate').forEach(function (plate) {
-      plate.addEventListener('click', function () { open(+plate.dataset.index); });
+    plates.forEach(function (plate) {
+      var index = +plate.dataset.index;
+      plate.addEventListener('click', function () { open(index); });
       plate.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(+plate.dataset.index); }
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(index); }
+      });
+    });
+
+    var chips = [].slice.call(document.querySelectorAll('.chip'));
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var want = chip.dataset.filter;
+        chips.forEach(function (c) { c.classList.toggle('is-on', c === chip); });
+        shown = [];
+        plates.forEach(function (plate) {
+          var keep = want === '*' || plate.dataset.label === want;
+          plate.hidden = !keep;
+          if (keep) shown.push(+plate.dataset.index);
+        });
+        if (wallEmpty) wallEmpty.hidden = shown.length > 0;
+        at = 0;
       });
     });
 
     box.querySelector('.lb-close').addEventListener('click', close);
-    box.querySelector('.lb-prev').addEventListener('click', function () { show(current - 1); });
-    box.querySelector('.lb-next').addEventListener('click', function () { show(current + 1); });
+    box.querySelector('.lb-prev').addEventListener('click', function () { step(-1); });
+    box.querySelector('.lb-next').addEventListener('click', function () { step(1); });
     box.addEventListener('click', function (e) { if (e.target === box) close(); });
 
     document.addEventListener('keydown', function (e) {
       if (box.hidden) return;
       if (e.key === 'Escape') close();
-      if (e.key === 'ArrowLeft') show(current - 1);
-      if (e.key === 'ArrowRight') show(current + 1);
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
     });
   })();
 </script>

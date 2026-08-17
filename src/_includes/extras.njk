@@ -1,0 +1,21 @@
+{#- The photographs that did not fit in the essay, as a strip you scroll
+    sideways. Included once inside each language panel so the lines under
+    the photos are in that panel's language. Needs: extras, lang. -#}
+{%- if extras and extras.length %}
+<section class="strip-wrap{% if lang == 'ko' %} kr{% endif %}" aria-label="{% if lang == 'ko' %}다 싣지 못한 사진{% else %}More photographs{% endif %}">
+  <div class="wrap">
+    <div class="strip-label">{% if lang == 'ko' %}다 싣지 못한 사진{% else %}More photographs{% endif %}</div>
+  </div>
+  <div class="strip" tabindex="0" role="group">
+    {%- for e in extras %}
+    {%- if e.image %}
+    <figure class="strip-item">
+      <img src="{{ e.image }}" alt="{{ e.alt }}"{{ e.image | size | safe }} loading="lazy">
+      {%- set line = e.caption_ko if lang == 'ko' else e.caption_en %}
+      {%- if line %}<figcaption>{{ line }}</figcaption>{% endif %}
+    </figure>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
