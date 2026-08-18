@@ -165,8 +165,10 @@ nav .links a:hover{color:var(--ink);}
    the first photo then lines up with the essay, and there is no scroll-snap
    quietly parking it somewhere else. */
 .strip{display:flex;gap:16px;overflow-x:auto;padding-bottom:14px;-webkit-overflow-scrolling:touch;}
-.strip-item{margin:0;flex:0 0 auto;max-width:78vw;}
-.strip-item img{height:320px;width:auto;border-radius:2px;display:block;}
+.strip-item{margin:0;flex:0 0 auto;max-width:78vw;cursor:zoom-in;outline:none;}
+.strip-item img{height:320px;width:auto;border-radius:2px;display:block;transition:opacity .25s;}
+.strip-item:hover img,.strip-item:focus-visible img{opacity:0.86;}
+.strip-item:focus-visible{outline:2px solid var(--celadon-deep);outline-offset:4px;}
 .strip-item figcaption{margin-top:10px;font-family:var(--display);font-style:italic;font-size:14px;color:var(--ink-soft);max-width:44ch;}
 .strip-wrap.kr .strip-label,.strip-wrap.kr .strip-item figcaption{font-family:var(--kr);font-weight:300;font-style:normal;}
 .strip-wrap.kr .strip-label{letter-spacing:0.08em;text-transform:none;font-size:13px;}

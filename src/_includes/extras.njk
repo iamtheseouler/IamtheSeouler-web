@@ -1,16 +1,22 @@
 {#- The photographs that did not fit in the essay, as a strip you scroll
     sideways. Included once inside each language panel so the lines under
-    the photos are in that panel's language. Needs: extras, lang. -#}
+    the photos are in that panel's language. Needs: extras, lang.
+    The lightbox itself is included once, by the post layout. -#}
 {%- if extras and extras.length %}
 <section class="strip-wrap{% if lang == 'ko' %} kr{% endif %}" aria-label="{% if lang == 'ko' %}다 싣지 못한 사진{% else %}More photographs{% endif %}">
   <div class="wrap">
     <div class="strip-label">{% if lang == 'ko' %}다 싣지 못한 사진{% else %}More photographs{% endif %}</div>
-    <div class="strip" tabindex="0" role="group">
+    <div class="strip" tabindex="0" role="group" data-lb-group>
     {%- for e in extras %}
     {%- if e.image %}
-    <figure class="strip-item">
+    {%- set line = e.caption_ko if lang == 'ko' else e.caption_en %}
+    <figure class="strip-item" data-lb tabindex="0" role="button"
+            aria-label="{{ e.alt }} — 크게 보기"
+            data-full="{{ e.image }}"
+            data-alt="{{ e.alt }}"
+            data-cap-en="{{ e.caption_en }}"
+            data-cap-ko="{{ e.caption_ko }}">
       <img src="{{ e.image }}" alt="{{ e.alt }}" sizes="(max-width: 780px) 58vw, 430px" loading="lazy">
-      {%- set line = e.caption_ko if lang == 'ko' else e.caption_en %}
       {%- if line %}<figcaption>{{ line }}</figcaption>{% endif %}
     </figure>
     {%- endif %}

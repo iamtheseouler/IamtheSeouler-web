@@ -1,0 +1,114 @@
+{#- Opens a photograph large. Used by the gallery and by the strip at the end
+    of a post, so it carries no page-specific data of its own.
+
+    A clickable photograph is any element with `data-lb`, carrying:
+      data-full       the file to show
+      data-alt        what a screen reader says
+      data-cap-en     the line under it, if there is one
+      data-cap-ko     the same line in Korean, if there is one
+      data-post-url   where the photograph came from (gallery only)
+      data-post-title the full title of that post, for the link's tooltip
+      data-post-label the short name of that post
+
+    Arrow keys move within the nearest `[data-lb-group]`, skipping anything
+    hidden — which is what makes the gallery's filter behave, and what keeps
+    a post's strip from wandering into the other language panel.       -#}
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+  <button class="lb-close" type="button" aria-label="닫기">✕</button>
+  <button class="lb-prev" type="button" aria-label="이전 사진">‹</button>
+  <button class="lb-next" type="button" aria-label="다음 사진">›</button>
+  <figure class="lb-frame">
+    <img id="lb-img" alt="">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+</div>
+
+<script>
+  (function () {
+    var box = document.getElementById('lightbox');
+    if (!box) return;
+    var img = document.getElementById('lb-img');
+    var cap = document.getElementById('lb-cap');
+    var prev = box.querySelector('.lb-prev');
+    var next = box.querySelector('.lb-next');
+    var group = [];
+    var at = 0;
+    var lastFocused = null;
+
+    function siblings(el) {
+      var scope = el.closest('[data-lb-group]') || document;
+      return [].slice.call(scope.querySelectorAll('[data-lb]')).filter(function (n) {
+        return !n.hidden && n.offsetParent !== null;
+      });
+    }
+
+    function line(cls, text) {
+      if (!text) return null;
+      var s = document.createElement('span');
+      s.className = cls;
+      s.textContent = text;
+      return s;
+    }
+
+    function paint() {
+      var d = group[at].dataset;
+      img.src = d.full;
+      img.alt = d.alt || '';
+      cap.textContent = '';
+      [line('lb-cap-en', d.capEn), line('lb-cap-ko', d.capKo)].forEach(function (n) {
+        if (n) cap.appendChild(n);
+      });
+      if (d.postUrl) {
+        var a = document.createElement('a');
+        a.className = 'lb-link';
+        a.href = d.postUrl;
+        if (d.postTitle) a.title = d.postTitle;
+        a.textContent = (d.postLabel ? d.postLabel + ' · ' : '') + '이 사진이 있는 글 보기 →';
+        cap.appendChild(a);
+      }
+      var many = group.length > 1;
+      prev.hidden = next.hidden = !many;
+    }
+
+    function step(by) { at = (at + by + group.length) % group.length; paint(); }
+
+    function open(el) {
+      group = siblings(el);
+      at = group.indexOf(el);
+      if (at === -1) { group = [el]; at = 0; }
+      lastFocused = document.activeElement;
+      paint();
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+      box.querySelector('.lb-close').focus();
+    }
+
+    function close() {
+      box.hidden = true;
+      img.removeAttribute('src');
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
+    }
+
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest && e.target.closest('[data-lb]');
+      if (el) { e.preventDefault(); open(el); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      var el = e.target.closest && e.target.closest('[data-lb]');
+      if (el && box.hidden && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault(); open(el); return;
+      }
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
+    });
+
+    box.querySelector('.lb-close').addEventListener('click', close);
+    prev.addEventListener('click', function () { step(-1); });
+    next.addEventListener('click', function () { step(1); });
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+  })();
+</script>
