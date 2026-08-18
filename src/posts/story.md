@@ -27,6 +27,65 @@ card:
   tagline: "나는 매일 여행한다, 바로 서울에서."
 
 # --- the article itself ---
+# --- 다 싣지 못한 사진 ---
+extras:
+  - image: /photos/origin-extra-st-pauls.jpg
+    alt: "The stone facade of the Ruins of St Paul's in Macau"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-dominic.jpg
+    alt: "The lit facade of St Dominic's Church in Macau at dusk, a palm frond overhead"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-lisboa-street.jpg
+    alt: "A Macau street at dusk, the Grand Lisboa lit at the far end"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-cotai-day.jpg
+    alt: "The Cotai boulevard by day, hotels crowded along it"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-cotai-sky.jpg
+    alt: "Cotai under a bright sky, hotels lining the boulevard"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-clocktower.jpg
+    alt: "A replica clock tower seen from above, the Venetian behind it"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-cotai-night.jpg
+    alt: "Cotai at night, a lit arcade running beside the clock tower"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-lobby.jpg
+    alt: "A domed hotel lobby with a bronze fountain at its centre"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-dome-statue.jpg
+    alt: "A winged bronze figure beneath a glass dome"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-red-ceiling.jpg
+    alt: "A painted ceiling and chandelier in a red and gold room"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-harbour-window.jpg
+    alt: "Hong Kong harbour seen through a hotel room window"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-two-trams.jpg
+    alt: "Two green trams passing on a Hong Kong street, seen from inside one"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-tram-corner.jpg
+    alt: "A curved corner building and red taxis at a Hong Kong junction"
+    caption_en: ''
+    caption_ko: ''
+  - image: /photos/origin-extra-mural-face.jpg
+    alt: "A painted face on a wall, half hidden by trees"
+    caption_en: ''
+    caption_ko: ''
+
 body_en: |
   ### 1. I Wasn't Even Supposed to Go
 

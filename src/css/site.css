@@ -161,8 +161,11 @@ nav .links a:hover{color:var(--ink);}
 /* ============ EXTRA PHOTOS UNDER A POST ============ */
 .strip-wrap{padding:10px 0 70px;}
 .strip-label{font-family:var(--mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--celadon-deep);border-top:1px solid var(--line-soft);padding-top:34px;margin-bottom:22px;}
-.strip{display:flex;gap:16px;overflow-x:auto;padding:0 44px 14px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;}
-.strip-item{margin:0;flex:0 0 auto;scroll-snap-align:start;max-width:78vw;}
+/* Scrolls inside the text column rather than off the edge of the window —
+   the first photo then lines up with the essay, and there is no scroll-snap
+   quietly parking it somewhere else. */
+.strip{display:flex;gap:16px;overflow-x:auto;padding-bottom:14px;-webkit-overflow-scrolling:touch;}
+.strip-item{margin:0;flex:0 0 auto;max-width:78vw;}
 .strip-item img{height:320px;width:auto;border-radius:2px;display:block;}
 .strip-item figcaption{margin-top:10px;font-family:var(--display);font-style:italic;font-size:14px;color:var(--ink-soft);max-width:44ch;}
 .strip-wrap.kr .strip-label,.strip-wrap.kr .strip-item figcaption{font-family:var(--kr);font-weight:300;font-style:normal;}
@@ -223,7 +226,6 @@ footer .info{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:
 }
 @media (max-width:780px){
   .photo-wall{columns:2;column-gap:16px;}
-  .strip{padding:0 22px 14px;}
   .strip-item img{height:230px;}
   .lightbox{padding:56px 20px;}
   .lb-prev,.lb-next{font-size:34px;}

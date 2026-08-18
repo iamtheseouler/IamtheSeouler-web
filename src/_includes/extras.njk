@@ -5,8 +5,7 @@
 <section class="strip-wrap{% if lang == 'ko' %} kr{% endif %}" aria-label="{% if lang == 'ko' %}다 싣지 못한 사진{% else %}More photographs{% endif %}">
   <div class="wrap">
     <div class="strip-label">{% if lang == 'ko' %}다 싣지 못한 사진{% else %}More photographs{% endif %}</div>
-  </div>
-  <div class="strip" tabindex="0" role="group">
+    <div class="strip" tabindex="0" role="group">
     {%- for e in extras %}
     {%- if e.image %}
     <figure class="strip-item">
@@ -16,6 +15,7 @@
     </figure>
     {%- endif %}
     {%- endfor %}
+    </div>
   </div>
 </section>
 {%- endif %}
