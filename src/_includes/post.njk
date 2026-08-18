@@ -70,6 +70,8 @@ layout: base.njk
   </div>
 </div>
 
+{% if extras and extras.length %}{% include "lightbox.njk" %}{% endif %}
+
 <script>
   (function(){
     var buttons = document.querySelectorAll('.lang-toggle button');
