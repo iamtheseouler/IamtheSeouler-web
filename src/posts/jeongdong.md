@@ -33,7 +33,7 @@ body_en: |-
 
   Until twenty past six. When the glass door closes and her small back disappears, I am left on the street holding those two hours.
 
-  ![My daughter walking down the corridor into the British Council](/photos/jeongdong-01-corridor.jpg)
+  ![My daughter walking down the corridor into the British Council](/photos/jeongdong-01-corridor.jpg "The door she goes through")
 
   And I walked. I thought I knew this street. I had walked it before, more than once, for other reasons. Nothing new here, I assumed. A loop around the palace wall, a coffee somewhere, and two hours would be gone.
 
@@ -41,11 +41,11 @@ body_en: |-
 
   Only by going there did I learn what ground the building stood on — the building my daughter walks into to learn English. It was the site of Pai Chai Hakdang.
 
-  ![The blue glass tower and the red brick hall beside it](/photos/jeongdong-02-brick.jpg)
+  ![The blue glass tower and the red brick hall beside it](/photos/jeongdong-02-brick.jpg "A hundred years, side by side")
 
   Beside it stands a house of red brick. A hundred years ago it held the school's classrooms; now it is a museum. In front of it, a statue of a man. Appenzeller.
 
-  ![The Appenzeller statue](/photos/jeongdong-03-statue.jpg)
+  ![The Appenzeller statue](/photos/jeongdong-03-statue.jpg "The man in front of the school")
 
   The name was not unknown to me. I had learned it at school; it had turned up on exams. Appenzeller — Pai Chai Hakdang — modern education. Three boxes memorised together, then blurred by time.
 
@@ -59,7 +59,7 @@ body_en: |-
 
   ### 3. The Girl from My School
 
-  ![The plaque beside the Appenzeller statue](/photos/jeongdong-04-plaque.jpg)
+  ![The plaque beside the Appenzeller statue](/photos/jeongdong-04-plaque.jpg "The plaque, and his end")
 
   The plaque recorded his end as well.
 
@@ -99,7 +99,7 @@ body_en: |-
 
   Where the lane ended, a house of red brick stood. The moment I came to a stop in front of it, time seemed to draw back a hundred years.
 
-  ![Jungmyeongjeon](/photos/jeongdong-05-jungmyeongjeon.jpg)
+  ![Jungmyeongjeon](/photos/jeongdong-05-jungmyeongjeon.jpg "Where the lane ended")
 
   It was beautiful. There is a beauty that comes only to things that have endured a long while. I looked up at it for some time, then went in.
 
@@ -109,7 +109,7 @@ body_en: |-
 
   Inside that beauty, a country lost its voice.
 
-  ![The signing of the 1905 treaty, reconstructed inside Jungmyeongjeon](/photos/jeongdong-06-treaty.jpg)
+  ![The signing of the 1905 treaty, reconstructed inside Jungmyeongjeon](/photos/jeongdong-06-treaty.jpg "Where a country lost its voice")
 
   Standing where the scene has been rebuilt, I was angry. Some had come here to help. Others had come to take.
 
@@ -131,7 +131,7 @@ body_en: |-
 
   We don't get straight on the bus. There is dinner to eat.
 
-  ![My daughter crossing the courtyard of the old school](/photos/jeongdong-07-courtyard.jpg)
+  ![My daughter crossing the courtyard of the old school](/photos/jeongdong-07-courtyard.jpg "She crosses the old school")
 
   Jeongdong-gil has many old shops. Walking alone in the afternoons I had noticed them again and again. Houses that have held this ground far longer than I have. Someday, I thought, I would sit down in one of them and have a bowl of something.
 
@@ -149,9 +149,9 @@ body_en: |-
 
   After dinner we walked a little further. Along the palace wall, and past the plaza in front of City Hall.
 
-  ![My daughter at the Deoksugung wall](/photos/jeongdong-08-wall.jpg)
+  ![My daughter at the Deoksugung wall](/photos/jeongdong-08-wall.jpg "Along the palace wall")
 
-  ![Seoul Plaza, the old city hall and the new one behind her](/photos/jeongdong-09-plaza.jpg)
+  ![Seoul Plaza, the old city hall and the new one behind her](/photos/jeongdong-09-plaza.jpg "Two city halls behind her")
 
   The plaza is full of foreigners. Wheeling suitcases, checking maps, taking pictures in front of the palace.
 
@@ -185,7 +185,7 @@ body_ko: |-
 
   여섯 시 이십 분까지. 유리문이 닫히고 아이의 뒷모습이 사라지면 나는 그 두 시간을 손에 든 채 거리에 남겨진다.
 
-  ![영국문화원 복도를 걸어 들어가는 아이](/photos/jeongdong-01-corridor.jpg)
+  ![영국문화원 복도를 걸어 들어가는 아이](/photos/jeongdong-01-corridor.jpg "The door she goes through")
 
   그리고 걸었다. 나는 이 길을 잘 안다고 생각했다. 전에도 다른 이유로 여러 번 걸어본 거리였으니까. 새로울 게 없다고 여겼다. 궁 담장을 한 바퀴 돌고 어디 앉아 커피나 한 잔 하면 두 시간쯤은 가겠거니 했다.
 
@@ -193,11 +193,11 @@ body_ko: |-
 
   아이가 영어를 배우러 들어간 건물이 어느 자리 위에 세워진 것인지 나는 가보고서야 알았다. 배재학당 터였다.
 
-  ![파란 유리 건물과 나란히 선 붉은 벽돌 동관](/photos/jeongdong-02-brick.jpg)
+  ![파란 유리 건물과 나란히 선 붉은 벽돌 동관](/photos/jeongdong-02-brick.jpg "A hundred years, side by side")
 
   바로 옆에 붉은 벽돌집 한 채가 서 있다. 백 년 전 배재학당의 교실이었고 지금은 역사박물관이다. 그 앞에 한 사람의 동상이 있다. 아펜젤러.
 
-  ![아펜젤러 동상](/photos/jeongdong-03-statue.jpg)
+  ![아펜젤러 동상](/photos/jeongdong-03-statue.jpg "The man in front of the school")
 
   모르는 이름은 아니었다. 학교에서 배웠고 시험에도 나왔다. 아펜젤러 — 배재학당 — 근대 교육. 그렇게 세 칸으로 묶어 외웠다가 오래전에 흐려진 이름.
 
@@ -211,7 +211,7 @@ body_ko: |-
 
   ### 3. 나의 선배
 
-  ![아펜젤러 안내판](/photos/jeongdong-04-plaque.jpg)
+  ![아펜젤러 안내판](/photos/jeongdong-04-plaque.jpg "The plaque, and his end")
 
   안내판에는 그의 마지막도 적혀 있었다.
 
@@ -251,7 +251,7 @@ body_ko: |-
 
   골목이 끝나는 자리에 붉은 벽돌집이 서 있었다. 그 앞에 서는 순간 시간이 백 년쯤 뒤로 물러난 것 같았다.
 
-  ![중명전 정면](/photos/jeongdong-05-jungmyeongjeon.jpg)
+  ![중명전 정면](/photos/jeongdong-05-jungmyeongjeon.jpg "Where the lane ended")
 
   아름다웠다. 오래 견딘 것들에게만 생기는 아름다움이 있다. 나는 한참을 올려다보다 안으로 들어갔다.
 
@@ -261,7 +261,7 @@ body_ko: |-
 
   그 아름다움 안에서 나라가 말을 잃었다.
 
-  ![을사늑약 체결 장면 재현](/photos/jeongdong-06-treaty.jpg)
+  ![을사늑약 체결 장면 재현](/photos/jeongdong-06-treaty.jpg "Where a country lost its voice")
 
   그 장면을 재현한 곳에서 나는 분노했다. 누군가는 도우러 왔고 다른 누군가는 뺏으러 왔다.
 
@@ -283,7 +283,7 @@ body_ko: |-
 
   우리는 곧장 버스를 타지 않는다. 저녁을 먹어야 하니까.
 
-  ![옛 교사 앞마당을 걸어가는 아이](/photos/jeongdong-07-courtyard.jpg)
+  ![옛 교사 앞마당을 걸어가는 아이](/photos/jeongdong-07-courtyard.jpg "She crosses the old school")
 
   정동길에는 오래된 가게가 많다. 혼자 걷던 낮에 몇 번이나 눈여겨봤다. 나보다 훨씬 오래 이 자리를 지킨 집들. 언젠가 저기 앉아 한 그릇 먹어보고 싶었다.
 
@@ -301,9 +301,9 @@ body_ko: |-
 
   저녁을 먹고 우리는 조금 더 걸었다. 궁 담장을 따라 걷다가 시청 앞 광장을 지났다.
 
-  ![덕수궁 돌담길에 선 아이](/photos/jeongdong-08-wall.jpg)
+  ![덕수궁 돌담길에 선 아이](/photos/jeongdong-08-wall.jpg "Along the palace wall")
 
-  ![서울광장을 걸어가는 아이. 뒤로 옛 시청과 새 시청](/photos/jeongdong-09-plaza.jpg)
+  ![서울광장을 걸어가는 아이. 뒤로 옛 시청과 새 시청](/photos/jeongdong-09-plaza.jpg "Two city halls behind her")
 
   광장에는 외국인이 많다. 캐리어를 끌고 지도를 확인하고 궁 앞에서 사진을 찍는다.
 
