@@ -149,8 +149,10 @@ nav .links a:hover{color:var(--ink);}
 .story-inner.kr h3{font-family:var(--kr);font-weight:500;}
 .story-inner.kr p{font-family:var(--kr);font-weight:300;letter-spacing:0.002em;}
 
-.shot{margin:38px 0 40px;}
-.shot img{width:100%;height:auto;border-radius:2px;}
+.shot{margin:38px 0 40px;cursor:zoom-in;outline:none;}
+.shot img{width:100%;height:auto;border-radius:2px;transition:opacity .25s;}
+.shot:hover img,.shot:focus-visible img{opacity:0.92;}
+.shot:focus-visible{outline:2px solid var(--celadon-deep);outline-offset:4px;}
 
 .story-close{padding:20px 0 100px;text-align:center;}
 .story-close .line1{font-family:var(--display);font-style:italic;font-size:26px;color:var(--celadon-deep);margin:0 0 12px;}
