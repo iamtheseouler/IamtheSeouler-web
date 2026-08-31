@@ -36,6 +36,13 @@ nav .mark b{font-weight:500;font-style:italic;color:var(--celadon-deep);}
 nav .links{display:flex;gap:28px;font-family:var(--mono);font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);}
 nav .links a:hover{color:var(--ink);}
 .home nav{position:relative;z-index:5;}
+/* On the celadon field the nav has to read light. */
+nav.on-celadon .mark{color:var(--on-celadon);}
+nav.on-celadon .mark b{color:#fff;}
+nav.on-celadon .links{color:rgba(251,250,246,0.75);}
+nav.on-celadon .links a:hover{color:#fff;}
+/* The hamburger only exists on phones — see the responsive block. */
+.nav-toggle{display:none;background:none;border:0;padding:0;}
 
 /* ============ POSTER HERO (home) ============ */
 /* 청자 면(위) → 백자 면(아래), 경계에 타이틀 */
@@ -221,11 +228,31 @@ footer .info{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:
 @media (max-width:780px){
   .wrap{padding:0 22px;}
   /* The links used to be hidden here, which left a phone with no way to
-     reach the gallery or the subscribe form. Four items fit on one line if
-     they sit under the mark instead of beside it. */
-  nav{flex-direction:column;gap:12px;padding:18px 0 10px;}
-  nav .links{gap:16px;font-size:11px;flex-wrap:wrap;justify-content:center;}
-  nav .links a{padding:6px 0;}
+     reach the gallery or the subscribe form. Stacking them under the mark
+     fixed that but read as another line of prose, so they live behind a
+     hamburger now and open as a full panel. */
+  nav{padding:18px 0;}
+  .nav-toggle{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;
+    gap:5px;width:44px;height:44px;margin-right:-10px;cursor:pointer;}
+  .nav-toggle span{display:block;width:24px;height:1.5px;background:var(--ink);
+    transition:transform .25s ease,opacity .15s ease;}
+  nav.on-celadon .nav-toggle span{background:#fff;}
+  nav.open .nav-toggle{position:fixed;top:18px;right:22px;z-index:70;}
+  nav.open .nav-toggle span{background:#fff;}
+  nav.open .nav-toggle span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+  nav.open .nav-toggle span:nth-child(2){opacity:0;}
+  nav.open .nav-toggle span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+  /* .on-celadon also sets a colour, so name it here or the home page's
+     menu comes out dimmer than every other page's. */
+  nav .links,nav.on-celadon .links{color:rgba(251,250,246,0.92);}
+  nav .links{position:fixed;inset:0;z-index:60;background:var(--celadon);
+    flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    font-size:15px;letter-spacing:0.14em;
+    opacity:0;visibility:hidden;transition:opacity .25s ease;}
+  nav.open .links{opacity:1;visibility:visible;}
+  nav .links a{padding:14px 24px;}
+  nav .links a:hover{color:#fff;}
   .dict-inner{padding:32px 26px;}
   .grid{grid-template-columns:repeat(2,1fr);gap:18px;}
   .tile.feature{grid-column:span 2;grid-template-columns:1fr;gap:18px;}
