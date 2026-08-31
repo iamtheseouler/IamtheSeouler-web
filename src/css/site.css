@@ -243,9 +243,12 @@ footer .info{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:
   nav.open .nav-toggle span:nth-child(2){opacity:0;}
   nav.open .nav-toggle span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 
+  /* .on-celadon also sets a colour, so name it here or the home page's
+     menu comes out dimmer than every other page's. */
+  nav .links,nav.on-celadon .links{color:rgba(251,250,246,0.92);}
   nav .links{position:fixed;inset:0;z-index:60;background:var(--celadon);
     flex-direction:column;align-items:center;justify-content:center;gap:6px;
-    font-size:15px;letter-spacing:0.14em;color:rgba(251,250,246,0.92);
+    font-size:15px;letter-spacing:0.14em;
     opacity:0;visibility:hidden;transition:opacity .25s ease;}
   nav.open .links{opacity:1;visibility:visible;}
   nav .links a{padding:14px 24px;}
