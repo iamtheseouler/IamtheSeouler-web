@@ -22,7 +22,7 @@ layout: base.njk
 
 <main class="story-body">
   <div class="wrap">
-    <div class="story-inner">
+    <div class="story-inner" data-lb-group>
 
       <p class="lede">{{ lede_en }}</p>
 
@@ -48,7 +48,7 @@ layout: base.njk
 
 <main class="story-body">
   <div class="wrap">
-    <div class="story-inner kr">
+    <div class="story-inner kr" data-lb-group>
 
       <p class="lede kr">{{ lede_ko }}</p>
 
@@ -70,7 +70,7 @@ layout: base.njk
   </div>
 </div>
 
-{% if extras and extras.length %}{% include "lightbox.njk" %}{% endif %}
+{% include "lightbox.njk" %}
 
 <script>
   (function(){

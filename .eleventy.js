@@ -24,8 +24,15 @@ md.renderer.rules.image = function (tokens, idx) {
   const token = tokens[idx];
   const src = token.attrGet("src") || "";
   const alt = token.content || "";
+  const line = token.attrGet("title") || "";
   const esc = md.utils.escapeHtml;
-  return `<figure class="shot"><img src="${esc(src)}" alt="${esc(alt)}" sizes="(max-width: 780px) 92vw, 660px" loading="lazy"></figure>`;
+  return (
+    `<figure class="shot" data-lb tabindex="0" role="button"` +
+    ` aria-label="${esc(alt)} — 크게 보기"` +
+    ` data-full="${esc(src)}" data-alt="${esc(alt)}"` +
+    (line ? ` data-cap-en="${esc(line)}"` : "") +
+    `><img src="${esc(src)}" alt="${esc(alt)}" sizes="(max-width: 780px) 92vw, 660px" loading="lazy"></figure>`
+  );
 };
 
 /* Photos written into a post body:  ![alt](/photos/x.jpg "one line")
@@ -94,6 +101,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("storyBody", function (markdown, lang) {
     if (!markdown) return "";
     let html = md.render(markdown);
+    /* The line under a photo is written once in the markdown, and a post may
+       use an English line in both panels. Move it to the Korean slot — which
+       carries the Korean face — only when it is actually Korean.          */
+    if (lang === "ko") {
+      html = html.replace(/data-cap-en="([^"]*)"/g, (whole, line) =>
+        /[\uAC00-\uD7A3]/.test(line) ? `data-cap-ko="${line}"` : whole
+      );
+    }
     const krClass = lang === "ko" ? ' class="kr"' : "";
     html = html.replace(
       /<h3>\s*(\d+\.)\s*/g,
