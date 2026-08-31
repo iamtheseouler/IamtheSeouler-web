@@ -31,7 +31,7 @@ card:
 extras:
   - image: /photos/origin-extra-st-pauls.jpg
     alt: "The stone facade of the Ruins of St Paul's in Macau"
-    caption_en: "The facade that outlasted the church"
+    caption_en: "Sky through the windows"
     caption_ko: ''
   - image: /photos/origin-extra-dominic.jpg
     alt: "The lit facade of St Dominic's Church in Macau at dusk, a palm frond overhead"
@@ -43,15 +43,15 @@ extras:
     caption_ko: ''
   - image: /photos/origin-extra-cotai-day.jpg
     alt: "The Cotai boulevard by day, hotels crowded along it"
-    caption_en: "Cotai by day"
+    caption_en: "Venice and London, one street apart"
     caption_ko: ''
   - image: /photos/origin-extra-cotai-sky.jpg
     alt: "Cotai under a bright sky, hotels lining the boulevard"
-    caption_en: "Hotels along the boulevard"
+    caption_en: "Every hedge in its place"
     caption_ko: ''
   - image: /photos/origin-extra-clocktower.jpg
     alt: "A replica clock tower seen from above, the Venetian behind it"
-    caption_en: "A clock tower, and the Venetian"
+    caption_en: "The real city, just behind"
     caption_ko: ''
   - image: /photos/origin-extra-cotai-night.jpg
     alt: "Cotai at night, a lit arcade running beside the clock tower"
