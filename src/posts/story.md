@@ -21,7 +21,7 @@ card:
   title: "I travel every day — right here in Seoul."
   cover: "/photos/origin-cover.jpg"
   cover_alt: "Hong Kong at night seen from Victoria Peak"
-  feature: true
+  feature: false
   tone: "t1"
   excerpt: "The Macau and Hong Kong trip that changed how I see the city I was born in."
   tagline: "나는 매일 여행한다, 바로 서울에서."
