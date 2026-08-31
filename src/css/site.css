@@ -220,7 +220,12 @@ footer .info{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:
 /* ============ RESPONSIVE ============ */
 @media (max-width:780px){
   .wrap{padding:0 22px;}
-  nav .links{display:none;}
+  /* The links used to be hidden here, which left a phone with no way to
+     reach the gallery or the subscribe form. Four items fit on one line if
+     they sit under the mark instead of beside it. */
+  nav{flex-direction:column;gap:12px;padding:18px 0 10px;}
+  nav .links{gap:16px;font-size:11px;flex-wrap:wrap;justify-content:center;}
+  nav .links a{padding:6px 0;}
   .dict-inner{padding:32px 26px;}
   .grid{grid-template-columns:repeat(2,1fr);gap:18px;}
   .tile.feature{grid-column:span 2;grid-template-columns:1fr;gap:18px;}
