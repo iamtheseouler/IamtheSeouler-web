@@ -4,8 +4,11 @@
 
 ## 글 쓰는 법
 
-`iamtheseouler.com/admin` 에서 GitHub 로 로그인하면 됩니다. 저장하면 곧바로
-`main` 에 커밋되고 1~2분 뒤 사이트에 반영됩니다.
+**항목별 설명과 순서는 [PUBLISHING.md](PUBLISHING.md) 에 따로 정리돼 있습니다.**
+직접 올리는 법과 Claude 에게 맡기는 법 둘 다 들어 있습니다.
+
+짧게 요약하면 — `iamtheseouler.com/admin` 에서 GitHub 로 로그인하면 됩니다.
+저장하면 곧바로 `main` 에 커밋되고 1~3분 뒤 사이트에 반영됩니다.
 
 글 하나는 파일 하나(`src/posts/*.md`)이고, 그 안에 영문·한글 본문이 함께 들어
 있습니다. 사이트의 EN/한글 토글이 이 두 벌을 전환합니다.
