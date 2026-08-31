@@ -31,59 +31,59 @@ card:
 extras:
   - image: /photos/origin-extra-st-pauls.jpg
     alt: "The stone facade of the Ruins of St Paul's in Macau"
-    caption_en: ''
+    caption_en: "The facade that outlasted the church"
     caption_ko: ''
   - image: /photos/origin-extra-dominic.jpg
     alt: "The lit facade of St Dominic's Church in Macau at dusk, a palm frond overhead"
-    caption_en: ''
+    caption_en: "St Dominic's at dusk"
     caption_ko: ''
   - image: /photos/origin-extra-lisboa-street.jpg
     alt: "A Macau street at dusk, the Grand Lisboa lit at the far end"
-    caption_en: ''
+    caption_en: "The Grand Lisboa at the end of the street"
     caption_ko: ''
   - image: /photos/origin-extra-cotai-day.jpg
     alt: "The Cotai boulevard by day, hotels crowded along it"
-    caption_en: ''
+    caption_en: "Cotai by day"
     caption_ko: ''
   - image: /photos/origin-extra-cotai-sky.jpg
     alt: "Cotai under a bright sky, hotels lining the boulevard"
-    caption_en: ''
+    caption_en: "Hotels along the boulevard"
     caption_ko: ''
   - image: /photos/origin-extra-clocktower.jpg
     alt: "A replica clock tower seen from above, the Venetian behind it"
-    caption_en: ''
+    caption_en: "A clock tower, and the Venetian"
     caption_ko: ''
   - image: /photos/origin-extra-cotai-night.jpg
     alt: "Cotai at night, a lit arcade running beside the clock tower"
-    caption_en: ''
+    caption_en: "The lit arcade beside the tower"
     caption_ko: ''
   - image: /photos/origin-extra-lobby.jpg
     alt: "A domed hotel lobby with a bronze fountain at its centre"
-    caption_en: ''
+    caption_en: "A fountain under the dome"
     caption_ko: ''
   - image: /photos/origin-extra-dome-statue.jpg
     alt: "A winged bronze figure beneath a glass dome"
-    caption_en: ''
+    caption_en: "Wings under glass"
     caption_ko: ''
   - image: /photos/origin-extra-red-ceiling.jpg
     alt: "A painted ceiling and chandelier in a red and gold room"
-    caption_en: ''
+    caption_en: "Red and gold, overhead"
     caption_ko: ''
   - image: /photos/origin-extra-harbour-window.jpg
     alt: "Hong Kong harbour seen through a hotel room window"
-    caption_en: ''
+    caption_en: "The harbour through the window"
     caption_ko: ''
   - image: /photos/origin-extra-two-trams.jpg
     alt: "Two green trams passing on a Hong Kong street, seen from inside one"
-    caption_en: ''
+    caption_en: "Two trams passing"
     caption_ko: ''
   - image: /photos/origin-extra-tram-corner.jpg
     alt: "A curved corner building and red taxis at a Hong Kong junction"
-    caption_en: ''
+    caption_en: "Red taxis at the corner"
     caption_ko: ''
   - image: /photos/origin-extra-mural-face.jpg
     alt: "A painted face on a wall, half hidden by trees"
-    caption_en: ''
+    caption_en: "A face, half hidden by trees"
     caption_ko: ''
 
 body_en: |
@@ -105,7 +105,7 @@ body_en: |
 
   ### 2. Alone in a Strange City
 
-  ![A plane at the gate at Incheon, seen through the terminal glass](/photos/origin-01-departure.jpg)
+  ![A plane at the gate at Incheon, seen through the terminal glass](/photos/origin-01-departure.jpg "Leaving, the first time alone")
 
   I left Incheon with my family seeing me off. Traveling without my husband, my son, and my daughter was a first, and it felt strange — trailed by a faint sense of guilt.
 
@@ -123,7 +123,7 @@ body_en: |
 
   And then something strange happened. The whole time I was scouting, I felt a curious thrill, a quiet elation. The small satisfaction of reading a map and actually finding the way. The unfamiliar stimulations I drank in through my eyes, through all five senses, as my feet traced every corner of those narrow streets. It was as if the city was waking, one by one, the cells that had lain dormant in me. And in that moment I realized: I'm actually rather good at finding my way, and I enjoy new experiences.
 
-  ![A lantern-lit lane in Macau, the Ruins of St. Paul's glowing at the top of the steps](/photos/origin-02-alley.jpg)
+  ![A lantern-lit lane in Macau, the Ruins of St. Paul's glowing at the top of the steps](/photos/origin-02-alley.jpg "The night I scouted alone")
 
   Once I'd learned the city, I went to meet my father, who arrived late at night, at the airport. Beforehand, worry had crept in — what if it's awkward, just the two of us? But the instant I met him in that unfamiliar city, the worry dissolved, and in its place came a flutter of excitement.
 
@@ -135,29 +135,29 @@ body_en: |
 
   The next morning, we set out to explore in earnest. Thanks to my scouting the day before, my mind was at ease. With the confidence that scouting had given me, I led my father through the streets without hesitation.
 
-  ![My father walking ahead of me on the mosaic pavement of old Macau](/photos/origin-03-street.jpg)
+  ![My father walking ahead of me on the mosaic pavement of old Macau](/photos/origin-03-street.jpg "My father, walking ahead")
 
   Macau won me over. A landscape shaped by a long colonial history, a city where the light and shadow of its casinos mingled. Even that interplay of brightness and dark was, to me, all good stimulation. And happily, my father took the city in fully too — that alone set my heart at rest.
 
   From there we moved to a resort in Cotai for a short staycation. Beneath the glittering lights, I forgot reality for a while and wore that splendor like a borrowed coat. And so our three days and two nights, too, glimmered and faded. Promising ourselves we'd return one day with the family who couldn't come, we set off for Hong Kong.
 
-  ![The Cotai strip at night, the Parisian tower lit above the boulevard](/photos/origin-04-cotai.jpg)
+  ![The Cotai strip at night, the Parisian tower lit above the boulevard](/photos/origin-04-cotai.jpg "Splendor, worn like a borrowed coat")
 
   ### 5. Hong Kong — Falling in Love
 
   We crossed from Macau to Hong Kong by bus. The two cities are joined by a long bridge, so the journey could be made by land. As we crossed that long, wondrous bridge, a thrill of moving on to a new destination rose in me. Hong Kong's air was unmistakably different. Now it was truly a new beginning.
 
-  ![Crossing the Tsing Ma Bridge by bus on the way into Hong Kong](/photos/origin-05-bridge.jpg)
+  ![Crossing the Tsing Ma Bridge by bus on the way into Hong Kong](/photos/origin-05-bridge.jpg "The long bridge into Hong Kong")
 
   There was one worry. In Macau I'd had time to scout ahead, but Hong Kong was new to me too, so my father and I would have to find our way together. Still, with the confidence already in me, it was no great problem. Let's do this.
 
   Here's how I managed it. Before locating each destination, I'd have my father wait a moment while I found the way first, then came back to bring him along. Afraid he might tire from wandering on his aching legs, I walked the distance twice over to spare his. And in doing so I realized one more thing: I walk better than I thought, and I'm strong. Truly, this was a journey that kept letting me discover a new self.
 
-  ![An old green-tiled tenement above a red taxi and a passing tram](/photos/origin-06-tenement.jpg)
+  ![An old green-tiled tenement above a red taxi and a passing tram](/photos/origin-06-tenement.jpg "Worn, never grimy")
 
   Hong Kong had a charm all its own, different from Macau. Dense forests of buildings, streets where present and past lived side by side. Worn but never grimy, and effortlessly cool. A place where the refined and the vintage came together in perfect harmony. It was free. Just being there, I felt free. And so, very quickly, I fell in love with this city.
 
-  ![Central at night, neon and screens along the canyon of buildings](/photos/origin-07-central.jpg)
+  ![Central at night, neon and screens along the canyon of buildings](/photos/origin-07-central.jpg "Present and past, side by side")
 
   ### 6. Hong Kong with My Father — A Period at the End
 
@@ -165,15 +165,15 @@ body_en: |
 
   And then a thought came to me. Someday, on the last day I part with my father in this world, I'll remember this night. "Dad, do you remember when we sat looking out at the Hong Kong night and talked? I was so happy then. Thank you — for being my father." That's what I'll say.
 
-  ![Hong Kong at night from Victoria Peak, the harbour cutting across the city](/photos/origin-08-peak.jpg)
+  ![Hong Kong at night from Victoria Peak, the harbour cutting across the city](/photos/origin-08-peak.jpg "The night we talked")
 
   The feelings that had gone unresolved for so long in my relationship with my father quietly tied themselves off that night, and came to a close.
 
-  ![My father looking out of the tram window at the lit street](/photos/origin-09-tram.jpg)
+  ![My father looking out of the tram window at the lit street](/photos/origin-09-tram.jpg "My father at the window")
 
   There's one scene among them I can't forget. Coming down from Victoria Peak after seeing the night view, we spotted a passing tram and, on a whim, climbed aboard with my father. The front seats on the upper deck were empty, so we sat there, and the winding, precarious ride through the forest of buildings felt like a fairground attraction. The sensation of riding something old through the present. Of past and present flowing as one body. Later, when I asked my father what he remembered most about Hong Kong, he named this tram first.
 
-  ![Tram tracks curving into the night city, seen from the upper deck](/photos/origin-10-tracks.jpg)
+  ![Tram tracks curving into the night city, seen from the upper deck](/photos/origin-10-tracks.jpg "The front seats were empty")
 
   And so Hong Kong with my father drew to a close. Now it was time for him to head back to Korea first.
 
@@ -183,9 +183,9 @@ body_en: |
 
   What I chose was to walk. The streets I'd seen in films, the familiar alleys from travel shows — I walked them, and walked them again. I wanted to feel as I walked. And I captured those moments with my camera. My own way of seeing.
 
-  ![A mural of old Hong Kong tenements painted along a blue wall on a sloping street](/photos/origin-11-mural.jpg)
+  ![A mural of old Hong Kong tenements painted along a blue wall on a sloping street](/photos/origin-11-mural.jpg "Walking, and walking again")
 
-  ![The Mid-Levels escalator running up between old buildings in SoHo](/photos/origin-12-escalator.jpg)
+  ![The Mid-Levels escalator running up between old buildings in SoHo](/photos/origin-12-escalator.jpg "The streets I'd seen in films")
 
   I used to be someone who couldn't even manage a meal alone at a restaurant. But now I ate alone, had dessert alone, breaking the fear of being alone one piece at a time, doing so many things for the first time. And even so, in a corner of my heart, I pictured the day I'd return here with the people I love.
 
@@ -193,7 +193,7 @@ body_en: |
 
   My first birthday spent alone. And the place I went was Hong Kong Disneyland. To a place I'd never go alone — and on my birthday, no less. The reason, again, was scouting. If I'm ever to bring my son and daughter here someday, I should go first and see it for myself.
 
-  ![The entrance arch of Hong Kong Disneyland](/photos/origin-13-disneyland.jpg)
+  ![The entrance arch of Hong Kong Disneyland](/photos/origin-13-disneyland.jpg "My first birthday alone")
 
   Coming alone to an amusement park I'd always visited holding my children's hands felt a little strange, but it wasn't bad. I rode the attractions my young daughter couldn't ride yet, and spent a whole day purely for myself, without the labor of looking after anyone. That alone was a wonderful birthday gift. I stayed through the final show and returned to my lodging late at night.
 
@@ -241,7 +241,7 @@ body_ko: |
 
   ### 2. 혼자, 낯선 도시에 내리다
 
-  ![인천공항 게이트, 유리창 너머로 보이는 비행기](/photos/origin-01-departure.jpg)
+  ![인천공항 게이트, 유리창 너머로 보이는 비행기](/photos/origin-01-departure.jpg "Leaving, the first time alone")
 
   가족들의 배웅을 받으며 인천을 떠났다. 남편과 아들, 딸을 두고 혼자 떠나는 여행은 처음이라 어색했고, 어딘가 미안한 마음이 따라붙었다.
 
@@ -259,7 +259,7 @@ body_ko: |
 
   그런데 이상한 일이었다. 답사를 다니는 내내, 나는 묘한 흥분과 희열을 느꼈다. 지도를 보고 길을 제대로 찾아냈을 때의 작은 쾌감. 좁은 골목을 구석구석 발로 밟으며 눈으로, 오감으로 빨아들이는 낯선 자극들. 도시의 온갖 것들이 잠들어 있던 세포를 하나씩 깨우는 것 같았다. 그리고 그 순간 알게 되었다. 나는 은근히 길을 잘 찾고, 새로운 경험을 즐기는 사람이라는 걸.
 
-  ![마카오의 밤 골목, 계단 끝에 불 밝힌 성 바울 성당 유적](/photos/origin-02-alley.jpg)
+  ![마카오의 밤 골목, 계단 끝에 불 밝힌 성 바울 성당 유적](/photos/origin-02-alley.jpg "The night I scouted alone")
 
   그렇게 도시를 익혀둔 뒤, 밤늦게 도착한 아빠를 공항으로 마중 나갔다. 가기 전엔 걱정이 앞섰다. 단둘이 어색하면 어쩌지. 그런데 막상 낯선 도시에서 아빠를 만나는 순간, 걱정은 사라지고 대신 설렘이 밀려왔다.
 
@@ -271,29 +271,29 @@ body_ko: |
 
   다음 날 아침, 본격적으로 관광에 나섰다. 전날 미리 돌아둔 덕분에 마음이 편했다. 답사가 준 자신감으로, 나는 아빠를 데리고 자신 있게 거리를 누볐다.
 
-  ![마카오 구시가지 모자이크 보도를 앞서 걸어가는 아빠](/photos/origin-03-street.jpg)
+  ![마카오 구시가지 모자이크 보도를 앞서 걸어가는 아빠](/photos/origin-03-street.jpg "My father, walking ahead")
 
   마카오는 마음에 쏙 들었다. 오랜 식민의 역사가 빚은 풍경과, 카지노의 빛과 그림자가 뒤섞인 도시. 그 명암마저 나에겐 온통 좋은 자극이었다. 다행히 아빠도 이 도시를 충분히 즐기셨고, 그것만으로 마음이 놓였다.
 
   이어 코타이의 리조트로 옮겨 짧은 호캉스도 누렸다. 번쩍이는 불빛 속에서 잠시 현실을 잊고 그 화려함을 옷처럼 걸쳐본 시간. 그렇게 우리의 2박 3일도 반짝이며 저물었다. 함께 오지 못한 가족들과 언젠가 다시 오리라 다짐하며, 이제 홍콩으로 향했다.
 
-  ![밤의 코타이, 대로 위로 불 밝힌 파리지앵 타워](/photos/origin-04-cotai.jpg)
+  ![밤의 코타이, 대로 위로 불 밝힌 파리지앵 타워](/photos/origin-04-cotai.jpg "Splendor, worn like a borrowed coat")
 
   ### 5. 홍콩 — 사랑에 빠지다
 
   마카오에서 홍콩으로는 버스로 넘어갔다. 두 도시가 긴 다리로 이어져 있어 육로로 갈 수 있었다. 그 길고 신기한 다리를 건너는 동안, 새로운 여행지로 옮겨가는 설렘이 차올랐다. 홍콩의 공기는 확실히 달랐다. 이제 진짜 새로운 시작이었다.
 
-  ![홍콩으로 들어가는 버스에서 본 칭마대교](/photos/origin-05-bridge.jpg)
+  ![홍콩으로 들어가는 버스에서 본 칭마대교](/photos/origin-05-bridge.jpg "The long bridge into Hong Kong")
 
   한 가지 걱정은 있었다. 마카오는 미리 답사할 시간이 있었지만, 홍콩은 나도 처음이라 아빠와 함께 부딪쳐 나가야 했다. 그래도 이미 자신감이 붙은 나에겐 큰 문제가 아니었다. 해보자.
 
   방법은 이랬다. 목적지를 찾기 전에 아빠는 잠시 기다리시게 하고, 내가 먼저 길을 찾은 뒤 다시 돌아와 아빠를 모셔왔다. 다리가 불편한 아빠가 괜히 헤매다 고생하실까 봐, 내가 두 번 오가며 아빠의 체력을 대신했다. 그러다 또 하나를 깨달았다. 나는 생각보다 잘 걷고, 체력이 좋은 사람이라는 걸. 참, 자꾸만 새로운 나를 발견하게 되는 여행이었다.
 
-  ![빨간 택시와 트램 너머, 초록 타일이 덮인 오래된 아파트](/photos/origin-06-tenement.jpg)
+  ![빨간 택시와 트램 너머, 초록 타일이 덮인 오래된 아파트](/photos/origin-06-tenement.jpg "Worn, never grimy")
 
   홍콩은 마카오와는 또 다른 매력이었다. 빼곡한 빌딩 숲, 현재와 과거가 공존하는 거리. 낡았지만 지저분하지 않고, 힙했다. 세련됨과 빈티지가 완벽하게 어우러지는 곳. 자유로웠다. 그저 그곳에 있는 것만으로 나는 자유를 느꼈다. 그래서 나는, 아주 빠르게 이 도시와 사랑에 빠지고 말았다.
 
-  ![밤의 센트럴, 빌딩 사이를 채운 네온과 전광판](/photos/origin-07-central.jpg)
+  ![밤의 센트럴, 빌딩 사이를 채운 네온과 전광판](/photos/origin-07-central.jpg "Present and past, side by side")
 
   ### 6. 아빠와의 홍콩 — 마침표를 찍다
 
@@ -301,15 +301,15 @@ body_ko: |
 
   그러다 문득 생각했다. 언젠가 아빠와 이 세상에서 헤어지는 마지막 날, 나는 이 밤을 떠올리겠구나. "아빠, 그때 우리 홍콩에서 야경 보며 앉아 얘기했던 거 기억나? 나 그때 참 좋았어. 고마워, 나의 아빠여서." 그렇게 말하게 되겠구나.
 
-  ![빅토리아 피크에서 내려다본 홍콩의 밤, 도시를 가로지르는 하버](/photos/origin-08-peak.jpg)
+  ![빅토리아 피크에서 내려다본 홍콩의 밤, 도시를 가로지르는 하버](/photos/origin-08-peak.jpg "The night we talked")
 
   오랜 세월 아빠와의 관계에서 풀리지 않던 감정들이, 그 밤 조용히 매듭을 짓고 마침표를 찍었다.
 
-  ![트램 창밖의 불빛을 바라보는 아빠](/photos/origin-09-tram.jpg)
+  ![트램 창밖의 불빛을 바라보는 아빠](/photos/origin-09-tram.jpg "My father at the window")
 
   그중에서도 잊히지 않는 장면이 하나 있다. 빅토리아 피크에서 야경을 보고 내려오던 길, 마침 지나가는 트램을 보고 즉흥적으로 아빠와 함께 올랐다. 2층 맨 앞자리가 비어 있어 거기 앉았는데, 구불구불 아슬아슬하게 빌딩 숲을 통과하는 그 길이 마치 놀이기구 같았다. 오래된 것을 타고 현재를 누비는 느낌. 과거와 현재가 한 몸으로 흐르는 감각. 훗날 아빠에게 홍콩에서 가장 기억에 남는 게 뭐냐 물었을 때, 아빠도 이 트램을 첫 번째로 꼽으셨다.
 
-  ![2층 트램에서 본, 밤의 도시로 휘어 들어가는 선로](/photos/origin-10-tracks.jpg)
+  ![2층 트램에서 본, 밤의 도시로 휘어 들어가는 선로](/photos/origin-10-tracks.jpg "The front seats were empty")
 
   그렇게 아빠와의 홍콩은 저물었다. 이제 아빠가 먼저 한국으로 돌아갈 시간이었다.
 
@@ -319,9 +319,9 @@ body_ko: |
 
   내가 택한 방법은 걷는 것이었다. 영화에서 봤던 거리, 여행 프로그램에 나왔던 익숙한 골목들을 걷고 또 걸었다. 걸으면서 느끼고 싶었다. 그리고 그 순간들을 카메라에 담았다. 나의 시선을.
 
-  ![경사진 길의 파란 벽에 그려진 홍콩 옛 아파트 벽화](/photos/origin-11-mural.jpg)
+  ![경사진 길의 파란 벽에 그려진 홍콩 옛 아파트 벽화](/photos/origin-11-mural.jpg "Walking, and walking again")
 
-  ![소호의 오래된 건물 사이를 올라가는 미드레벨 에스컬레이터](/photos/origin-12-escalator.jpg)
+  ![소호의 오래된 건물 사이를 올라가는 미드레벨 에스컬레이터](/photos/origin-12-escalator.jpg "The streets I'd seen in films")
 
   원래 나는 혼자 식당에서 밥도 잘 못 먹는 사람이었다. 그런데 혼자 밥을 먹고, 혼자 디저트를 먹고, 혼자라는 두려움을 하나씩 깨며 많은 것을 처음으로 해봤다. 그러면서도 마음 한편으론, 언젠가 사랑하는 사람들과 다시 이곳에 올 날을 그렸다.
 
@@ -329,7 +329,7 @@ body_ko: |
 
   혼자 맞는 첫 생일. 그날 내가 간 곳은 홍콩 디즈니랜드였다. 혼자서는 절대 가지 않을 법한 곳에, 그것도 생일에 간 것이다. 이유는 역시 답사였다. 언젠가 아들과 딸을 데리고 오려면, 내가 먼저 가서 겪어봐야지.
 
-  ![홍콩 디즈니랜드 입구](/photos/origin-13-disneyland.jpg)
+  ![홍콩 디즈니랜드 입구](/photos/origin-13-disneyland.jpg "My first birthday alone")
 
   늘 아이들 손을 잡고 오던 놀이동산에 혼자 오니 조금 어색했지만, 나쁘지 않았다. 아직 어린 딸과는 탈 수 없던 놀이기구도 타고, 누군가를 챙겨야 하는 수고 없이 온전히 나만을 위해 보낸 하루. 그것만으로 훌륭한 생일 선물이었다. 마지막 공연까지 다 보고, 늦은 밤에야 숙소로 돌아왔다.
 
