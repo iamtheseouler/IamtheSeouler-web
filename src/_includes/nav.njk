@@ -1,7 +1,7 @@
 {# The home page nav sits on the celadon field and needs light text;
    everywhere else it sits on paper. Pass onCeladon from the home page.
    The colours used to be inline styles; they are classes now so the
-   phone's overlay menu can set its own without fighting them. #}
+   phone's drawer can set its own without fighting them. #}
 <nav{% if onCeladon %} class="on-celadon"{% endif %}>
   {%- if onCeladon %}
   <div class="mark">I am the <b>Seouler</b></div>
@@ -13,7 +13,13 @@
     <span></span><span></span><span></span>
   </button>
 
+  <div class="nav-scrim"></div>
+
   <div class="links" id="nav-links">
+    <div class="links-head">
+      <span class="links-title">I am the <b>Seouler</b></span>
+      <button type="button" class="nav-close" aria-label="메뉴 닫기">&times;</button>
+    </div>
     {%- if onCeladon %}
     <a href="#about">About</a>
     <a href="#journal">Journal</a>
@@ -38,12 +44,13 @@
     function set(open){
       nav.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      btn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
       document.body.style.overflow = open ? 'hidden' : '';
     }
     btn.addEventListener('click', function(){ set(!nav.classList.contains('open')); });
-    // Tapping a link should take you there, not leave the panel covering it.
+    // Tapping a link should take you there, not leave the drawer covering it.
     links.addEventListener('click', function(e){ if (e.target.closest('a')) set(false); });
+    nav.querySelector('.nav-close').addEventListener('click', function(){ set(false); });
+    nav.querySelector('.nav-scrim').addEventListener('click', function(){ set(false); });
     document.addEventListener('keydown', function(e){ if (e.key === 'Escape') set(false); });
     window.addEventListener('resize', function(){ if (window.innerWidth > 780) set(false); });
   })();
