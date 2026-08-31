@@ -1,21 +1,50 @@
 {# The home page nav sits on the celadon field and needs light text;
-   everywhere else it sits on paper. Pass onCeladon from the home page. #}
-<nav>
+   everywhere else it sits on paper. Pass onCeladon from the home page.
+   The colours used to be inline styles; they are classes now so the
+   phone's overlay menu can set its own without fighting them. #}
+<nav{% if onCeladon %} class="on-celadon"{% endif %}>
   {%- if onCeladon %}
-  <div class="mark" style="color:var(--on-celadon);">I am the <b style="color:#fff;">Seouler</b></div>
-  <div class="links" style="color:rgba(251,250,246,0.75);">
+  <div class="mark">I am the <b>Seouler</b></div>
+  {%- else %}
+  <a href="/" class="mark">I am the <b>Seouler</b></a>
+  {%- endif %}
+
+  <button type="button" class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="links" id="nav-links">
+    {%- if onCeladon %}
     <a href="#about">About</a>
     <a href="#journal">Journal</a>
     <a href="/gallery">Gallery</a>
     <a href="#subscribe">Subscribe</a>
-  </div>
-  {%- else %}
-  <a href="/" class="mark">I am the <b>Seouler</b></a>
-  <div class="links">
+    {%- else %}
     <a href="/#about">About</a>
     <a href="/#journal">Journal</a>
     <a href="/gallery">Gallery</a>
     <a href="/#subscribe">Subscribe</a>
+    {%- endif %}
   </div>
-  {%- endif %}
 </nav>
+
+<script>
+  (function(){
+    var nav = document.querySelector('nav');
+    if (!nav) return;
+    var btn = nav.querySelector('.nav-toggle');
+    var links = nav.querySelector('.links');
+    if (!btn || !links) return;
+    function set(open){
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    btn.addEventListener('click', function(){ set(!nav.classList.contains('open')); });
+    // Tapping a link should take you there, not leave the panel covering it.
+    links.addEventListener('click', function(e){ if (e.target.closest('a')) set(false); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') set(false); });
+    window.addEventListener('resize', function(){ if (window.innerWidth > 780) set(false); });
+  })();
+</script>
