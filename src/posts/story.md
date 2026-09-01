@@ -41,13 +41,9 @@ extras:
     alt: "A Macau street at dusk, the Grand Lisboa lit at the far end"
     caption_en: "The Grand Lisboa at the end of the street"
     caption_ko: ''
-  - image: /photos/origin-extra-cotai-day.jpg
-    alt: "The Cotai boulevard by day, hotels crowded along it"
-    caption_en: "Venice and London, one street apart"
-    caption_ko: ''
   - image: /photos/origin-extra-cotai-sky.jpg
     alt: "Cotai under a bright sky, hotels lining the boulevard"
-    caption_en: "Every hedge in its place"
+    caption_en: "Venice and London, one street apart"
     caption_ko: ''
   - image: /photos/origin-extra-clocktower.jpg
     alt: "A replica clock tower seen from above, the Venetian behind it"
