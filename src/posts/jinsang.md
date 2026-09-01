@@ -92,6 +92,8 @@ body_en: |
 
   Ten minutes on foot from the house there is a shop called Hwanggeumal Mart — Golden Egg Mart. The children walk all the way there, each choose one snack they like, and eat it on the walk home. That walk is what they love.
 
+  For the children this place is travel. There is water to play in, there are things they have never seen before, and once a day there is a shop to walk to. Seoul has no summer like this.
+
   When I was small there was a shop in more or less the same spot. We would go down in a swarm and buy the cheap sweets the grown-ups called junk.
 
   It isn't the same shop. They aren't the same children. But ten minutes on foot is still ten minutes on foot, and eating it on the way home is still eating it on the way home.
@@ -143,8 +145,6 @@ body_ko: |
   그리고 이 집에는 내 기억보다 앞선 시간이 있다. 더 어릴 적에 나는 한동안 여기서 살았다고 한다. 내 기억에는 없다. 없는 걸 보면 아주 어릴 때였을 것이다.
 
   그러니까 이곳은 내가 가장 먼저 간 곳이고 가장 여러 번 간 곳이다.
-
-  그런데 나는 이곳을 여행지라고 여겨본 적이 없다. 외갓집이었으니까.
 
   ### 2. 그 집
 
