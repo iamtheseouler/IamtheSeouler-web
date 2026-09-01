@@ -37,9 +37,21 @@ extras:
     alt: "The lit facade of St Dominic's Church in Macau at dusk, a palm frond overhead"
     caption_en: "St Dominic's at dusk"
     caption_ko: ''
+  - image: /photos/origin-extra-dominic-inside.jpg
+    alt: "The white baroque altar inside St Dominic's, a chandelier overhead"
+    caption_en: "Inside, all white"
+    caption_ko: ''
+  - image: /photos/origin-extra-domingos-sign.jpg
+    alt: "A blue and white tiled street sign on a yellow wall beside a green gate"
+    caption_en: "The street name, in tile"
+    caption_ko: ''
   - image: /photos/origin-extra-lisboa-street.jpg
     alt: "A Macau street at dusk, the Grand Lisboa lit at the far end"
     caption_en: "The Grand Lisboa at the end of the street"
+    caption_ko: ''
+  - image: /photos/origin-extra-gelato.jpg
+    alt: "A gelato shop on a Macau street, people at the counter inside"
+    caption_en: "Everyone inside, at the counter"
     caption_ko: ''
   - image: /photos/origin-extra-cotai-sky.jpg
     alt: "Cotai under a bright sky, hotels lining the boulevard"
@@ -65,21 +77,65 @@ extras:
     alt: "A painted ceiling and chandelier in a red and gold room"
     caption_en: "Red and gold, overhead"
     caption_ko: ''
+  - image: /photos/origin-extra-soda-shop.jpg
+    alt: "A mint green shop with old roof tiles and a painted poster in the window"
+    caption_en: "A mint shop under old tiles"
+    caption_ko: ''
+  - image: /photos/origin-extra-milk-tea.jpg
+    alt: "A bottle of milk tea held up in front of the cafe it came from"
+    caption_en: "Held up in front of the shop"
+    caption_ko: ''
+  - image: /photos/origin-extra-blue-shop.jpg
+    alt: "A blue gift shop on a cobbled street, green bollards along the kerb"
+    caption_en: "Cobblestones and a blue wall"
+    caption_ko: ''
   - image: /photos/origin-extra-harbour-window.jpg
     alt: "Hong Kong harbour seen through a hotel room window"
     caption_en: "The harbour through the window"
+    caption_ko: ''
+  - image: /photos/origin-extra-promenade.jpg
+    alt: "The Hong Kong promenade, the harbour and the skyline lost in fog"
+    caption_en: "The harbour, gone in fog"
     caption_ko: ''
   - image: /photos/origin-extra-two-trams.jpg
     alt: "Two green trams passing on a Hong Kong street, seen from inside one"
     caption_en: "Two trams passing"
     caption_ko: ''
+  - image: /photos/origin-extra-lanterns.jpg
+    alt: "Food stalls down a narrow street, lanterns strung overhead the whole way"
+    caption_en: "Lanterns all the way down"
+    caption_ko: ''
   - image: /photos/origin-extra-tram-corner.jpg
     alt: "A curved corner building and red taxis at a Hong Kong junction"
     caption_en: "Red taxis at the corner"
     caption_ko: ''
+  - image: /photos/origin-extra-comics-stairs.jpg
+    alt: "A public staircase painted with comic characters, figures standing on the steps"
+    caption_en: "A staircase drawn on"
+    caption_ko: ''
+  - image: /photos/origin-extra-tram-ahead.jpg
+    alt: "Another tram on the track ahead, seen past the pink window frame of this one"
+    caption_en: "Seen from the tram behind"
+    caption_ko: ''
+  - image: /photos/origin-extra-park-path.jpg
+    alt: "A shaded path under banyan trees, two purple sculptures on the wall"
+    caption_en: "Two purple things watching the path"
+    caption_ko: ''
+  - image: /photos/origin-extra-graffiti.jpg
+    alt: "A painted graffiti board standing in a courtyard, a tree behind it"
+    caption_en: "A tree behind the paint"
+    caption_ko: ''
+  - image: /photos/origin-extra-red-tram.jpg
+    alt: "A red tram among cars and crowds on a Hong Kong street"
+    caption_en: "The street, and everyone in it"
+    caption_ko: ''
   - image: /photos/origin-extra-mural-face.jpg
     alt: "A painted face on a wall, half hidden by trees"
     caption_en: "A face, half hidden by trees"
+    caption_ko: ''
+  - image: /photos/origin-extra-flamingos.jpg
+    alt: "Flamingos standing in the green water of a park pond under banyan trees"
+    caption_en: "Flamingos in green water"
     caption_ko: ''
 
 body_en: |
