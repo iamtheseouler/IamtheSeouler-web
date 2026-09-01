@@ -42,7 +42,7 @@ body_en: |
 
   And this house holds time that runs ahead of my memory. When I was younger still, I lived there for a while — or so I am told. I have no memory of it. Which means I must have been very young.
 
-  I had thought of it as the house I came to each summer. It was a house I had once lived in.
+  So this is the first place I ever went, and the place I have gone to most often.
 
   ### 2. The House
 
