@@ -131,7 +131,12 @@ nav.on-celadon .links a:hover{color:#fff;}
 .form input::placeholder{color:rgba(251,250,246,0.5);}
 .form button{background:var(--paper);color:var(--celadon-deep);border:none;padding:0 26px;font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;}
 .form button:hover{background:#fff;}
-.subscribe .fine{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(251,250,246,0.5);margin-top:24px;}
+.subscribe .fine{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(251,250,246,0.5);margin-top:24px;transition:color .2s;}
+/* The same line answers the form: brighter when it worked, amber when it didn't.
+   No new element appears, so nothing on the page moves. */
+.subscribe .fine.done{color:#fff;}
+.subscribe .fine.warn{color:#F2C879;}
+.form button[disabled]{opacity:0.6;cursor:default;}
 
 /* ============ POST PAGES ============ */
 .lang-toggle{display:flex;justify-content:center;gap:8px;padding:6px 0 0;}

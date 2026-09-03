@@ -101,11 +101,88 @@ bodyClass: home
       <h2>New notes from Seoul,<br>straight to your inbox.</h2>
       <p class="h2-kr">서울에서 보내는 편지, 당신의 메일함으로.</p>
       <p>For anyone who lives here, dreams of it, or just wants to see the everyday differently.</p>
-      <div class="form">
-        <input type="email" placeholder="you@example.com">
-        <button>Subscribe</button>
-      </div>
-      <div class="fine">No spam · Unsubscribe anytime</div>
+      <form class="form" id="subscribe-form" novalidate>
+        <input type="email" name="email" id="subscribe-email" required
+               autocomplete="email" placeholder="you@example.com"
+               aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="fine" id="subscribe-note">No spam · Unsubscribe anytime</div>
     </div>
   </div>
 </section>
+
+<script>
+  /* The form posts to our own /api/subscribe, which hands the address to
+     beehiiv. Nobody leaves the page — the answer arrives where the form was. */
+  (function () {
+    var form = document.getElementById("subscribe-form");
+    if (!form) return;
+    var field = document.getElementById("subscribe-email");
+    var button = form.querySelector("button");
+    var note = document.getElementById("subscribe-note");
+    var noteText = note.textContent;
+    var busy = false;
+
+    function say(message, tone) {
+      note.textContent = message;
+      note.className = "fine" + (tone ? " " + tone : "");
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (busy) return;
+
+      var email = field.value.trim();
+      if (!email || !field.checkValidity()) {
+        say("That address doesn't look right.", "warn");
+        field.focus();
+        return;
+      }
+
+      busy = true;
+      button.disabled = true;
+      button.textContent = "Sending";
+      say("One moment.");
+
+      fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email })
+      })
+        .then(function (r) { return r.json().catch(function () { return {}; }); })
+        .then(function (data) {
+          if (data && data.ok) {
+            form.hidden = true;
+            say(
+              data.status === "existing"
+                ? "You're already on the list. See you in Seoul."
+                : "Check your inbox to confirm. See you in Seoul.",
+              "done"
+            );
+            return;
+          }
+          if (data && data.error === "email") {
+            say("That address doesn't look right.", "warn");
+          } else {
+            say("Something went wrong. Try again in a moment.", "warn");
+          }
+          reset();
+        })
+        .catch(function () {
+          say("Something went wrong. Try again in a moment.", "warn");
+          reset();
+        });
+
+      function reset() {
+        busy = false;
+        button.disabled = false;
+        button.textContent = "Subscribe";
+      }
+    });
+
+    field.addEventListener("input", function () {
+      if (note.className !== "fine") say(noteText);
+    });
+  })();
+</script>
