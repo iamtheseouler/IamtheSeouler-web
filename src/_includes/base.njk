@@ -17,12 +17,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500{% if bodyClass == 'home' %}&family=Nothing+You+Could+Do{% endif %}&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/site.css">
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+{# Analytics runs on the live site only, and never for the people who build it.
+   Everything that used to be counted — preview deployments while checking a
+   change, and our own visits to read what we just published — made the numbers
+   describe us instead of the readers.
+
+   Two gates:
+     1. host must be the real domain (so *.vercel.app previews record nothing)
+     2. the browser must not carry the opt-out mark
+
+   To stop being counted on a device, visit /?notrack=1 once. /?notrack=0 undoes
+   it. The mark lives in that browser, so it survives a changing IP — home wifi,
+   the office, mobile data. #}
+<script>
+  window.seoulerCount = (function () {
+    var host = location.hostname;
+    var live = host === "iamtheseouler.com" || host === "www.iamtheseouler.com";
+    try {
+      var ask = new URLSearchParams(location.search).get("notrack");
+      if (ask === "1") localStorage.setItem("seouler-notrack", "1");
+      if (ask === "0") localStorage.removeItem("seouler-notrack");
+      if (localStorage.getItem("seouler-notrack")) return false;
+    } catch (e) { /* private mode: fall through and count */ }
+    return live;
+  })();
+
+  if (window.seoulerCount) {
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "{{ site.analytics.clarityId }}");
+  }
 </script>
 </head>
 <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
@@ -36,6 +62,17 @@
   </div>
 </footer>
 
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ site.analytics.cloudflareToken }}"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics — same two gates as Clarity above -->
+<script>
+  if (window.seoulerCount) {
+    var cf = document.createElement("script");
+    cf.type = "module";
+    cf.defer = true;
+    cf.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    cf.setAttribute("data-cf-beacon", '{"token": "{{ site.analytics.cloudflareToken }}"}');
+    document.body.appendChild(cf);
+  }
+</script>
+<!-- End Cloudflare Web Analytics -->
 </body>
 </html>
