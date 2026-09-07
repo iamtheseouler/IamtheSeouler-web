@@ -90,6 +90,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/photos": "photos" });
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+  /* Share pictures: 1200×630 crops, copied through untouched. The image
+     plugin rewrites <img> tags in HTML, and these never appear in one —
+     they are read straight off the address in a meta tag. */
+  eleventyConfig.addPassthroughCopy({ "src/og": "og" });
 
   // /admin is the CMS. It is copied through untouched — Eleventy must not try
   // to read the curly braces in its config as template syntax.

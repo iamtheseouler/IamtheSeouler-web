@@ -19,6 +19,30 @@
 <meta name="google-site-verification" content="4w0a0uWypvIBywizh7xNqkPw9s4x8LoKCPzn0nIXfck">
 <meta name="naver-site-verification" content="b0be221076128faca7919054154a6d100d7d5283">
 <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+
+{#- What a link to this page looks like when someone pastes it into KakaoTalk,
+    Instagram, Slack or a message. Without these there is no picture and no
+    title — only the bare address, which nobody clicks.
+
+    ogImage is set per page (see each template); the 1200×630 files in /og are
+    cropped for this and nothing else, because a tall photograph gets sliced
+    badly by every one of these services. -#}
+{% set ogPic = ogImage or "/og/og-home.jpg" %}
+{% set ogDesc = description or site.storySub %}
+<meta property="og:type" content="{% if title_en %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:description" content="{{ ogDesc }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url | clean }}">
+<meta property="og:image" content="{{ site.url }}{{ ogPic }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle }}">
+<meta name="twitter:description" content="{{ ogDesc }}">
+<meta name="twitter:image" content="{{ site.url }}{{ ogPic }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {# Korean is requested on its own line. Google serves Noto Serif KR as ~100
