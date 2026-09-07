@@ -2,25 +2,35 @@
 permalink: /feed.xml
 eleventyExcludeFromCollections: true
 ---
-{#- The journal as a feed. Naver reads it to learn when something new is
-    published, and readers who use a feed app can follow along without email.
-    Descriptions carry the Korean tagline, since that is the line written to
-    make someone want to read the piece. -#}
+{#- The journal as a feed.
+
+    Naver reads this to learn what is here, and its guidance asks for the whole
+    piece with its photographs rather than a summary. So each item carries the
+    full Korean text — which matters more than it sounds: the pages themselves
+    are English documents with a Korean panel folded inside, and a search
+    engine reading one sees an English page. This feed is the one place the
+    Korean writing stands on its own.
+
+    Titles are Korean for the same reason. Someone searching in Korean should
+    meet a Korean line. -#}
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>{{ site.name }}</title>
     <link>{{ site.url }}/</link>
-    <description>{{ site.storySub }}</description>
-    <language>en</language>
+    <description>있는 곳을 산다. 지나온 곳을 여행이라 부른다. 서울러처럼.</description>
+    <language>ko</language>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
     {%- for post in collections.journal %}
     <item>
-      <title>{{ post.data.title_en }}</title>
+      <title>{{ post.data.title_ko }}</title>
       <link>{{ site.url }}{{ post.url | clean }}</link>
       <guid isPermaLink="true">{{ site.url }}{{ post.url | clean }}</guid>
       <pubDate>{{ post.date | rssDate }}</pubDate>
-      <description>{{ post.data.description }}</description>
+      <description><![CDATA[<p>{{ post.data.lede_ko }}</p>
+{{ post.data.body_ko | feedBody(site.url) | safe }}]]></description>
+      <content:encoded><![CDATA[<p>{{ post.data.lede_ko }}</p>
+{{ post.data.body_ko | feedBody(site.url) | safe }}]]></content:encoded>
     </item>
     {%- endfor %}
   </channel>
