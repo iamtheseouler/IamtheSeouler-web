@@ -140,6 +140,11 @@ module.exports = function (eleventyConfig) {
     (d instanceof Date ? d : new Date(d)).toISOString().slice(0, 10)
   );
 
+  // Sat, 15 Mar 2025 00:00:00 GMT — the only date format RSS readers accept.
+  eleventyConfig.addFilter("rssDate", (d) =>
+    (d instanceof Date ? d : new Date(d)).toUTCString()
+  );
+
 
   /* Every photo on the site belongs to a post: either it sits in the body, or
      it is one of the extras that did not fit. The gallery is all of them,
