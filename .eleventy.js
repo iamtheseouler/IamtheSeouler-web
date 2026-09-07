@@ -135,6 +135,11 @@ module.exports = function (eleventyConfig) {
   // Strip the .html so links stay on the clean URLs Vercel already serves.
   eleventyConfig.addFilter("clean", (url) => (url || "").replace(/\.html$/, ""));
 
+  // 2025-03-15, the form sitemaps and structured data expect.
+  eleventyConfig.addFilter("isoDate", (d) =>
+    (d instanceof Date ? d : new Date(d)).toISOString().slice(0, 10)
+  );
+
 
   /* Every photo on the site belongs to a post: either it sits in the body, or
      it is one of the extras that did not fit. The gallery is all of them,

@@ -1,0 +1,11 @@
+---
+permalink: /robots.txt
+eleventyExcludeFromCollections: true
+---
+{#- Tells crawlers they are welcome, and where the map is. /admin is the CMS —
+    a login screen with nothing to read, so there is no reason to index it. -#}
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: {{ site.url }}/sitemap.xml

@@ -8,6 +8,12 @@
 {% else %}{% set pageTitle = site.name %}{% endif %}
 <title>{{ pageTitle }}</title>
 {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+{#- One address per page. The site answers on both iamtheseouler.com and
+    www.iamtheseouler.com, and Vercel sends the first to the second; this tells
+    search engines which one is the real one so the two are never counted as
+    two different pages holding the same writing. -#}
+<link rel="canonical" href="{{ site.url }}{{ page.url | clean }}">
+<meta name="author" content="{{ site.name }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 {# Korean is requested on its own line. Google serves Noto Serif KR as ~100
