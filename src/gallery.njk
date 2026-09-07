@@ -2,7 +2,7 @@
 layout: base.njk
 permalink: /gallery.html
 seoTitle: The Gallery | I am the Seouler
-description: Every photograph from the journal, in one place — and a way back to the story each one came from.
+description: "Wherever I am, one frame at a time. 저널에 실린 모든 사진, 그리고 그 사진이 나온 글로 돌아가는 길."
 ogImage: /og/og-gallery.jpg
 ---
 {% set photos = collections.galleryPhotos %}
@@ -13,8 +13,12 @@ ogImage: /og/og-gallery.jpg
 <header class="story-head">
   <div class="wrap">
     <div class="story-meta">The Gallery</div>
-    <h1>Seoul, one frame at a time.</h1>
-    <p class="story-sub-kr">서울, 한 장면씩.</p>
+    {# Not "Seoul, one frame at a time" any more: the gallery holds Macau,
+       Hong Kong and a village in Gwangyang as well. "Wherever I am" keeps the
+       rhythm and picks up the tagline — living where you are is the same act
+       whether that place is home or somewhere you are passing through. #}
+    <h1>Wherever I am, one frame at a time.</h1>
+    <p class="story-sub-kr">있는 곳에서, 한 장면씩.</p>
   </div>
 </header>
 
