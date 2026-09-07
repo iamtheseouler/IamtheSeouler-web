@@ -29,9 +29,14 @@
     badly by every one of these services. -#}
 {% set ogPic = ogImage or "/og/og-home.jpg" %}
 {% set ogDesc = description or site.storySub %}
+{#- The title in the browser tab and in search results has work to do — it is
+    the line someone reads before deciding to click, so it carries the words
+    they might have searched for. A share card does not need that: the picture
+    already says whose it is. So the two are allowed to differ. -#}
+{% set shareTitle = ogTitle or title_en or site.name %}
 <meta property="og:type" content="{% if title_en %}article{% else %}website{% endif %}">
 <meta property="og:site_name" content="{{ site.name }}">
-<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:title" content="{{ shareTitle }}">
 <meta property="og:description" content="{{ ogDesc }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url | clean }}">
 <meta property="og:image" content="{{ site.url }}{{ ogPic }}">
@@ -40,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ pageTitle }}">
+<meta name="twitter:title" content="{{ shareTitle }}">
 <meta name="twitter:description" content="{{ ogDesc }}">
 <meta name="twitter:image" content="{{ site.url }}{{ ogPic }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
