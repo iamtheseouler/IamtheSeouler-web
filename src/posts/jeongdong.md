@@ -1,6 +1,7 @@
 ---
 url_slug: ''
 date: 2026-08-10
+ogImage: /og/og-jeongdong.jpg
 title_en: While My Daughter Learns English, I Walk a Hundred Years
 title_ko: 딸이 영어를 배우는 두 시간, 나는 백 년을 걸었다
 sub_kr: 딸이 영어를 배우는 두 시간, 나는 백 년을 걸었다.
