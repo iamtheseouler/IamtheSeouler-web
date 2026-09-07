@@ -145,6 +145,24 @@ module.exports = function (eleventyConfig) {
     (d instanceof Date ? d : new Date(d)).toUTCString()
   );
 
+  /* A post body for the feed. Naver asks for the whole piece with its
+     photographs rather than a summary, and reads what it is given — so the
+     Korean text goes here, which is the only place on this site where a
+     search engine meets this writing in Korean without an English page
+     wrapped around it.
+
+     Plain <p>, <h3> and <img>: no lightbox attributes, no responsive sizes,
+     and every photo turned into a full address, since a feed is read far from
+     the page it came from. */
+  eleventyConfig.addFilter("feedBody", function (markdown, base) {
+    if (!markdown) return "";
+    return md
+      .render(markdown)
+      .replace(/<figure class="shot"[^>]*>/g, "<figure>")
+      .replace(/ (data-lb|tabindex|role|aria-label|data-full|data-alt|data-cap-en|data-cap-ko|sizes|loading)="[^"]*"/g, "")
+      .replace(/src="\//g, `src="${base}/`);
+  });
+
 
   /* Every photo on the site belongs to a post: either it sits in the body, or
      it is one of the extras that did not fit. The gallery is all of them,
