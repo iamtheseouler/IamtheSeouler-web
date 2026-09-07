@@ -1,0 +1,27 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+{#- The journal as a feed. Naver reads it to learn when something new is
+    published, and readers who use a feed app can follow along without email.
+    Descriptions carry the Korean tagline, since that is the line written to
+    make someone want to read the piece. -#}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.name }}</title>
+    <link>{{ site.url }}/</link>
+    <description>{{ site.storySub }}</description>
+    <language>en</language>
+    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    {%- for post in collections.journal %}
+    <item>
+      <title>{{ post.data.title_en }}</title>
+      <link>{{ site.url }}{{ post.url | clean }}</link>
+      <guid isPermaLink="true">{{ site.url }}{{ post.url | clean }}</guid>
+      <pubDate>{{ post.date | rssDate }}</pubDate>
+      <description>{{ post.data.description }}</description>
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
