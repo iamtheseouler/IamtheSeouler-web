@@ -1,5 +1,7 @@
+const path = require("path");
 const markdownIt = require("markdown-it");
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const { ensureCards } = require("./lib/og-card");
 /* ------------------------------------------------------------------
    The Seouler — Eleventy config
 
@@ -126,6 +128,26 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("journal", (api) =>
     api.getFilteredByGlob("src/posts/*.md").sort((a, b) => b.date - a.date)
   );
+
+  /* A share card for any post that hasn't got one. Writing a new post means
+     naming a cover photograph and nothing else; the picture that appears when
+     someone pastes the link is made here. Cards already in src/og are left
+     alone, so the ones composed by hand stay. */
+  eleventyConfig.on("eleventy.before", async ({ dir }) => {
+    const postDir = path.join(__dirname, "src", "posts");
+    const posts = require("fs")
+      .readdirSync(postDir)
+      .filter((f) => f.endsWith(".md"))
+      .map((f) => ({
+        url: "/" + path.basename(f, ".md"),
+        data: require("gray-matter").read(path.join(postDir, f)).data
+      }));
+    const made = await ensureCards(posts, {
+      ogDir: path.join(__dirname, "src", "og"),
+      photoDir: path.join(__dirname, "src", "photos")
+    });
+    if (made.length) console.log(`[og] made ${made.length}: ${made.join(", ")}`);
+  });
 
   /* Which post gets the big slot on the home page: whichever is flagged
      `card.feature`, otherwise simply the newest.                        */

@@ -27,7 +27,11 @@
     ogImage is set per page (see each template); the 1200×630 files in /og are
     cropped for this and nothing else, because a tall photograph gets sliced
     badly by every one of these services. -#}
-{% set ogPic = ogImage or "/og/og-home.jpg" %}
+{#- A post's card is named after the post, so a new one is found without being
+    named anywhere: write the post, and the build makes /og/og-<slug>.jpg. -#}
+{% if ogImage %}{% set ogPic = ogImage %}
+{% elif title_en %}{% set ogPic = "/og/og-" + page.fileSlug + ".jpg" %}
+{% else %}{% set ogPic = "/og/og-home.jpg" %}{% endif %}
 {% set ogDesc = description or site.storySub %}
 {#- The title in the browser tab and in search results has work to do — it is
     the line someone reads before deciding to click, so it carries the words
