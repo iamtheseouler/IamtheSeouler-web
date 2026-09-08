@@ -8,8 +8,8 @@ eleventyExcludeFromCollections: true
     piece with its photographs rather than a summary. So each item carries the
     full Korean text — which matters more than it sounds: the pages themselves
     are English documents with a Korean panel folded inside, and a search
-    engine reading one sees an English page. This feed is the one place the
-    Korean writing stands on its own.
+    engine reading one sees an English page. Each post now also has a Korean
+    page of its own at /ko/<slug>, and that is where these items point.
 
     Titles are Korean for the same reason. Someone searching in Korean should
     meet a Korean line. -#}
@@ -24,8 +24,8 @@ eleventyExcludeFromCollections: true
     {%- for post in collections.journal %}
     <item>
       <title>{{ post.data.title_ko }}</title>
-      <link>{{ site.url }}{{ post.url | clean }}</link>
-      <guid isPermaLink="true">{{ site.url }}{{ post.url | clean }}</guid>
+      <link>{{ site.url }}/ko{{ post.url | clean }}</link>
+      <guid isPermaLink="true">{{ site.url }}/ko{{ post.url | clean }}</guid>
       <pubDate>{{ post.date | rssDate }}</pubDate>
       <description><![CDATA[<p>{{ post.data.lede_ko }}</p>
 {{ post.data.body_ko | feedBody(site.url) | safe }}]]></description>

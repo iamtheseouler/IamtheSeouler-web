@@ -139,10 +139,13 @@ nav.on-celadon .links a:hover{color:#fff;}
 .form button[disabled]{opacity:0.6;cursor:default;}
 
 /* ============ POST PAGES ============ */
+/* Each language now has its own page, so this is a link to the other one and
+   a label for the one you are reading — not two buttons switching a panel.
+   Both are styled the same so the change is invisible. */
 .lang-toggle{display:flex;justify-content:center;gap:8px;padding:6px 0 0;}
-.lang-toggle button{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);background:none;border:1px solid var(--line);border-radius:20px;padding:6px 16px;cursor:pointer;}
-.lang-toggle button.active{color:var(--on-celadon);background:var(--celadon-deep);border-color:var(--celadon-deep);}
-.lang-toggle button:hover:not(.active){color:var(--ink);border-color:var(--celadon-mid);}
+.lang-toggle a,.lang-toggle span{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);background:none;border:1px solid var(--line);border-radius:20px;padding:6px 16px;cursor:pointer;display:inline-block;line-height:1.2;}
+.lang-toggle .active{color:var(--on-celadon);background:var(--celadon-deep);border-color:var(--celadon-deep);cursor:default;}
+.lang-toggle a:hover{color:var(--ink);border-color:var(--celadon-mid);}
 
 .story-head{padding:50px 0 60px;text-align:center;border-bottom:1px solid var(--line);}
 .story-meta{font-family:var(--mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--celadon-deep);margin-bottom:22px;}
