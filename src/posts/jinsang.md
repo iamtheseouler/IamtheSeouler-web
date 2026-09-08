@@ -3,7 +3,6 @@ date: 2026-08-29
 seoTitle: "My Oldest Journey | I am the Seouler"
 description: "엄마의 고향집에 평생 여름마다 갔다. 그런데 나는 그곳을 여행이라고 세어본 적이 없다. 전남 광양 진상, 그리고 그 마당에서 자란 두 세대의 여름."
 
-ogImage: /og/og-jinsang.jpg
 
 # --- headline (EN / KO) ---
 title_en: "My Oldest Journey"
