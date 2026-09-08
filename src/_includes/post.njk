@@ -1,15 +1,21 @@
 ---
 layout: base.njk
 ---
+{#- The English page. Its Korean twin lives at /ko/<slug> and is built by
+    src/posts-ko.njk from the same file.
+
+    These used to be one page holding both languages, with the toggle hiding
+    one of them. A search engine reading that saw an English document with
+    Korean inside it, which is why nothing on this site could be found by
+    searching in Korean — and nine in ten visitors are in Korea. Two pages,
+    each in one language, each with its own address, fixes that. -#}
 <div class="wrap">
   {% include "nav.njk" %}
   <div class="lang-toggle">
-    <button data-lang="en" class="active">EN</button>
-    <button data-lang="ko">한글</button>
+    <span class="active">EN</span>
+    <a href="/ko{{ page.url | clean }}" hreflang="ko" lang="ko">한글</a>
   </div>
 </div>
-
-<div id="panel-en" class="lang-panel">
 
 <header class="story-head">
   <div class="wrap">
@@ -34,34 +40,6 @@ layout: base.njk
 
 {% set lang = "en" %}{% include "extras.njk" %}
 
-</div>
-
-<div id="panel-ko" class="lang-panel" hidden>
-
-<header class="story-head">
-  <div class="wrap">
-    <div class="story-meta">{{ meta_ko }}</div>
-    <h1 class="kr">{{ title_ko }}</h1>
-    <p class="story-sub">{{ site.storySub }}</p>
-  </div>
-</header>
-
-<main class="story-body">
-  <div class="wrap">
-    <div class="story-inner kr" data-lb-group>
-
-      <p class="lede kr">{{ lede_ko }}</p>
-
-{{ body_ko | storyBody("ko") | safe }}
-
-    </div>
-  </div>
-</main>
-
-{% set lang = "ko" %}{% include "extras.njk" %}
-
-</div>
-
 <div class="story-close">
   <div class="wrap">
     <p class="line1">{{ site.closeLine1 }}</p>
@@ -71,23 +49,3 @@ layout: base.njk
 </div>
 
 {% include "lightbox.njk" %}
-
-<script>
-  (function(){
-    var buttons = document.querySelectorAll('.lang-toggle button');
-    var panelEn = document.getElementById('panel-en');
-    var panelKo = document.getElementById('panel-ko');
-    function setLang(lang){
-      panelEn.hidden = lang !== 'en';
-      panelKo.hidden = lang !== 'ko';
-      buttons.forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
-      try{ localStorage.setItem('seouler-story-lang', lang); }catch(e){}
-    }
-    buttons.forEach(function(b){
-      b.addEventListener('click', function(){ setLang(b.dataset.lang); });
-    });
-    var saved;
-    try{ saved = localStorage.getItem('seouler-story-lang'); }catch(e){}
-    setLang(saved === 'ko' ? 'ko' : 'en');
-  })();
-</script>

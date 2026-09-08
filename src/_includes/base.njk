@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+{#- A page is in one language, and says so. The Korean post pages set
+    pageLang; everything else is the English side of the site. -#}
+{% set docLang = pageLang or "en" %}
+<html lang="{{ docLang }}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{% if seoTitle %}{% set pageTitle = seoTitle %}
-{% elif title_en %}{% set pageTitle = title_en + " | " + site.name %}
-{% else %}{% set pageTitle = site.name %}{% endif %}
+{% if docLang == "ko" and post %}
+  {% set pageTitle = post.data.title_ko + " | I am the Seouler" %}
+  {% set pageDesc = post.data.description_ko or post.data.description %}
+{% elif seoTitle %}
+  {% set pageTitle = seoTitle %}{% set pageDesc = description %}
+{% elif title_en %}
+  {% set pageTitle = title_en + " | " + site.name %}{% set pageDesc = description %}
+{% else %}
+  {% set pageTitle = site.name %}{% set pageDesc = description %}
+{% endif %}
 <title>{{ pageTitle }}</title>
-{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+{% if pageDesc %}<meta name="description" content="{{ pageDesc }}">{% endif %}
 {#- One address per page. The site answers on both iamtheseouler.com and
     www.iamtheseouler.com, and Vercel sends the first to the second; this tells
     search engines which one is the real one so the two are never counted as
     two different pages holding the same writing. -#}
 <link rel="canonical" href="{{ site.url }}{{ page.url | clean }}">
 <meta name="author" content="{{ site.name }}">
+{#- Each post exists twice, once per language. These tell a search engine the
+    two are the same piece of writing rather than duplicates competing with
+    each other, and which to show to a reader searching in Korean. -#}
+{% if post %}
+  {% set enUrl = site.url + (post.url | clean) %}
+  {% set koUrl = site.url + "/ko" + (post.url | clean) %}
+{% elif title_en %}
+  {% set enUrl = site.url + (page.url | clean) %}
+  {% set koUrl = site.url + "/ko" + (page.url | clean) %}
+{% endif %}
+{% if enUrl %}
+<link rel="alternate" hreflang="en" href="{{ enUrl }}">
+<link rel="alternate" hreflang="ko" href="{{ koUrl }}">
+<link rel="alternate" hreflang="x-default" href="{{ enUrl }}">
+{% endif %}
 {#- Proves to Google that we own the site, so Search Console will show us what
     people search for before they arrive. Not a secret; it only identifies. -#}
 <meta name="google-site-verification" content="4w0a0uWypvIBywizh7xNqkPw9s4x8LoKCPzn0nIXfck">
@@ -30,15 +55,16 @@
 {#- A post's card is named after the post, so a new one is found without being
     named anywhere: write the post, and the build makes /og/og-<slug>.jpg. -#}
 {% if ogImage %}{% set ogPic = ogImage %}
+{% elif post %}{% set ogPic = "/og/og-" + post.fileSlug + ".jpg" %}
 {% elif title_en %}{% set ogPic = "/og/og-" + page.fileSlug + ".jpg" %}
 {% else %}{% set ogPic = "/og/og-home.jpg" %}{% endif %}
-{% set ogDesc = description or site.storySub %}
+{% set ogDesc = pageDesc or site.storySub %}
 {#- The title in the browser tab and in search results has work to do — it is
     the line someone reads before deciding to click, so it carries the words
     they might have searched for. A share card does not need that: the picture
     already says whose it is. So the two are allowed to differ. -#}
-{% set shareTitle = ogTitle or title_en or site.name %}
-<meta property="og:type" content="{% if title_en %}article{% else %}website{% endif %}">
+{% set shareTitle = ogTitle or (post.data.title_ko if docLang == "ko" and post) or title_en or site.name %}
+<meta property="og:type" content="{% if title_en or post %}article{% else %}website{% endif %}">
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:title" content="{{ shareTitle }}">
 <meta property="og:description" content="{{ ogDesc }}">
@@ -46,8 +72,8 @@
 <meta property="og:image" content="{{ site.url }}{{ ogPic }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale" content="{% if docLang == 'ko' %}ko_KR{% else %}en_US{% endif %}">
+<meta property="og:locale:alternate" content="{% if docLang == 'ko' %}en_US{% else %}ko_KR{% endif %}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ shareTitle }}">
 <meta name="twitter:description" content="{{ ogDesc }}">

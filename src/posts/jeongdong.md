@@ -8,6 +8,7 @@ meta_en: Aug 2026 · Jeongdong
 meta_ko: 2026년 8월 · 정동
 seoTitle: While My Daughter Learns English, I Walk a Hundred Years | I am the Seouler
 description: Two hours in a language-school waiting room in Jeongdong, and a century of Korea five minutes away on foot.
+description_ko: "딸을 어학원에 들여보내고 남은 두 시간. 정동을 걷다가 배재학당 터와 중명전을 만났다. 백 년 전 이 자리에서 영어를 배우던 사람들의 이야기."
 lede_en: This began in waiting. The two hours left over after I send my daughter through the door of her language school. I started walking the streets around it. And walking, I came to understand what kind of ground I had been standing on.
 lede_ko: 이 글은 기다리다가 시작됐다. 아이를 학원에 들여보내고 남은 두 시간. 그 시간에 나는 그 주변을 걷기 시작했다. 그러다 알게 되었다. 내가 서 있던 이 자리가 어떤 자리인지를.
 card:

@@ -2,6 +2,7 @@
 date: 2025-03-15
 seoTitle: "Every Day, I Travel — Right Here in Seoul | I am the Seouler"
 description: "The Macau and Hong Kong trip that changed how I see the city I was born in — the origin story of I am the Seouler."
+description_ko: "마카오와 홍콩으로 떠난 첫 혼자 여행이 태어난 도시를 보는 눈을 바꿨다. 서울을 여행지처럼 살기로 한, I am the Seouler의 시작이 된 글."
 
 
 # --- headline (EN / KO) ---

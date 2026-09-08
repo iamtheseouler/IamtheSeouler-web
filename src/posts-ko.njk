@@ -1,0 +1,57 @@
+---
+pagination:
+  data: collections.journal
+  size: 1
+  alias: post
+permalink: "/ko/{{ post.fileSlug }}.html"
+layout: base.njk
+eleventyExcludeFromCollections: true
+# Must live here, not in a {% set %} below: the layout is rendered from this
+# page's data, and anything set inside the body never reaches it.
+pageLang: ko
+---
+{#- The Korean page for each post: /ko/<slug>, built one per journal entry.
+    Everything it needs comes from the same markdown file the English page
+    uses, so writing a post still means writing one file. -#}
+{% set altUrl = post.url | clean %}
+<div class="wrap">
+  {% include "nav.njk" %}
+  <div class="lang-toggle">
+    <a href="{{ altUrl }}" hreflang="en" lang="en">EN</a>
+    <span class="active">한글</span>
+  </div>
+</div>
+
+<header class="story-head">
+  <div class="wrap">
+    <div class="story-meta">{{ post.data.meta_ko }}</div>
+    <h1 class="kr">{{ post.data.title_ko }}</h1>
+    <p class="story-sub">{{ site.storySub }}</p>
+  </div>
+</header>
+
+<main class="story-body">
+  <div class="wrap">
+    <div class="story-inner kr" data-lb-group>
+
+      <p class="lede kr">{{ post.data.lede_ko }}</p>
+
+{{ post.data.body_ko | storyBody("ko") | safe }}
+
+    </div>
+  </div>
+</main>
+
+{% set lang = "ko" %}
+{% set extras = post.data.extras %}
+{% include "extras.njk" %}
+
+<div class="story-close">
+  <div class="wrap">
+    <p class="line1">{{ site.closeLine1 }}</p>
+    <p class="line2">{{ site.closeLine2 }}</p>
+    <a class="back" href="/#journal">← 저널로 돌아가기</a>
+  </div>
+</div>
+
+{% include "lightbox.njk" %}
